@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+
+      <template id="assets_frontend" inherit_id="website.assets_frontend" name="My scripts">
+         <xpath expr="." position="inside">
+
+         <script type="text/javascript">
+
+            "use strict";
+            function checkSession(sessionID, prevousURL, currentURL) {
+                // проверка сессии на сервере на устаревание
+                var requestUrl = '/web_calc/check_session'
+                openerp.jsonRpc(requestUrl, 'call',
+                        {'sessionID': sessionID, 'prevousURL': prevousURL, 'currentURL': currentURL})
+                        .then(function (data) {
+                            //вернуть должно sessionID, sessionTimout
+                            console.debug('checkSession result: ' + data);
+                            setCookie(sessionIDname, data['sessionID'], data['sessionTimout']);
+                            setCookie(sessionPingName, data['sessionPingTimeout'], data['sessionTimout']);
+                        });
+                return false;
+            }
+            function registerSession(prevouseURL, currentURL){
+                // регистрация сессии на сервере
+                var result = false;
+                var requestUrl = '/web_calc/register_session'
+                openerp.jsonRpc(requestUrl, 'call', {'prevouseURL': prevouseURL, 'currentURL': currentURL})
+                        .then(function (data) {
+                            console.debug('registerSession result: ' + data);
+                            setCookie(sessionIDname, data['sessionID'], data['sessionTimout']);
+                            setCookie(sessionPingName, data['sessionPingTimeout'], data['sessionTimout']);
+                            //result = data;
+                        });
+                return result;
+            }
+
+
+
+        </script>
+	<script src="http://yandex.mightycall.ru/c2c/js/InfraC2C_5.3.js" type="text/javascript"></script>
+        <script src="http://mightycallstorage.blob.core.windows.net/c2cjss/ff10e4ee-c57f-4851-8cca-11288acc0a9a.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                InitClick2Call("en");
+            });
+            InitClick2Call("en");
+        </script>
+         </xpath>
+     </template>
+  </data>
+</openerp>
