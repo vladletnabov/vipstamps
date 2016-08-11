@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="session_time_parameter_value_list_action">
+            <field name="name">Parameters</field>
+            <field name="res_model">vips_vc.session_time_parameter_value</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first parameter
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="session_list_action">
+            <field name="name">Sessions</field>
+            <field name="res_model">vips_vc.session</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first record for session
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="site_trip_list_action">
+            <field name="name">Site trip</field>
+            <field name="res_model">vips_vc.site_trip</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first record for site trip
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="url_list_list_action">
+            <field name="name">URL list</field>
+            <field name="res_model">vips_vc.url_list</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first url
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="search_engine_list_action">
+            <field name="name">Search engine</field>
+            <field name="res_model">vips_vc.search_engine</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first engine
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="search_phrases_list_action">
+            <field name="name">Search phrases</field>
+            <field name="res_model">vips_vc.search_phrases</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first phrase
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="advert_company_list_action">
+            <field name="name">Adverting company</field>
+            <field name="res_model">vips_vc.advert_company</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first company
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="advert_engine_list_action">
+            <field name="name">Adverting engine</field>
+            <field name="res_model">vips_vc.advert_engine</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first phrase
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="session_time_parameter_value_tree_view">
+            <field name="name">session_time_parameter_value.tree</field>
+            <field name="model">vips_vc.session_time_parameter_value</field>
+            <field name="arch" type="xml">
+                <tree string="URL list tree">
+                    <field name="name"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="site_trip_tree_view">
+            <field name="name">site_trip.tree</field>
+            <field name="model">vips_vc.site_trip</field>
+            <field name="arch" type="xml">
+                <tree string="URL list tree">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="session_ids"/>
+                    <field name="url_prevouse_ids" string="PrevURL">
+                    </field>
+                    <!--<field name="url_prevouse_ids"/>-->
+                    <field name="url_current_ids"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="session_tree_view">
+            <field name="name">session.tree</field>
+            <field name="model">vips_vc.session</field>
+            <field name="arch" type="xml">
+                <tree string="URL list tree">
+
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="client_addr"/>
+                    <field name="date_visit" string="Date"/>
+                    <field name="date_last_check" string="last check"/>
+                    <field name="target_url_ids">
+                        <tree string="Target URLs">
+                            <field name="name"/>
+                        </tree>
+                    </field>
+                    <field name="site_trip_id">
+                        <tree string="Site trip IDs">
+                            <field name="id"/>
+                        </tree>
+                    </field>
+                    <field name="search_engine_id"/>
+                    <field name="search_phrase_id"/>
+                    <field name="advert_company_id"/>
+                    <field name="advert_engine_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="url_list_tree_view">
+            <field name="name">url_list.tree</field>
+            <field name="model">vips_vc.url_list</field>
+            <field name="arch" type="xml">
+                <tree string="URL list tree">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="url_parametes"/>
+                </tree>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="search_engine_tree_view">
+            <field name="name">search_engine.tree</field>
+            <field name="model">vips_vc.search_engine</field>
+            <field name="arch" type="xml">
+                <tree string="Search engine tree">
+                    <field name="name"/>
+                    <field name="uniq_part_in_host"/>
+                    <field name="search_marker"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="search_phrases_tree_view">
+            <field name="name">search_phrases.tree</field>
+            <field name="model">vips_vc.search_phrases</field>
+            <field name="arch" type="xml">
+                <tree string="Search phrases tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="advert_company_tree_view">
+            <field name="name">advert_company.tree</field>
+            <field name="model">vips_vc.advert_company</field>
+            <field name="arch" type="xml">
+                <tree string="Adverting company tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="advert_engine_tree_view">
+            <field name="name">advert_engine.tree</field>
+            <field name="model">vips_vc.advert_engine</field>
+            <field name="arch" type="xml">
+                <tree string="Adverting engines tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="session_form_view">
+            <field name="name">session.form</field>
+            <field name="model">vips_vc.session</field>
+            <field name="arch" type="xml">
+                <form string="Сессии посетителей">
+                    <sheet>
+                        <group>
+                            <field name="id" string="ID"/>
+                            <field name="client_addr" string="IP клиента"/>
+                            <field name="date_visit" string="Дата визита"/>
+                            <field name="date_last_check" string="Последняя активность"/>
+                            <field name="target_url_ids" string="URL входа"/>
+                            <notebook>
+                                <page string="SEO">
+                                    <field name="search_engine_id" string="Поисковая машина"/>
+                                    <field name="search_phrase_id" string="Поисковая фраза"/>
+
+                                </page>
+                                <page string="Реклама">
+                                    <field name="advert_engine_id" string="Рекламная машина"/>
+                                    <field name="advert_company_id" string="Рекламная компания"/>
+                                </page>
+                                <page string="Маршрут">
+                                    <field name="site_trip_id" string="Маршрут по сайту"/>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_vips_vc_menu" name="Web visitor Calc" />
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="vips_vc_menu" name="Web visitor Calc"
+                  parent="main_vips_vc_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="session_time_parameter_value_menu" name="Parameters" parent="vips_vc_menu"
+                  action="session_time_parameter_value_list_action"/>
+        <menuitem id="site_trip_menu" name="Site trip" parent="vips_vc_menu"
+                  action="site_trip_list_action"/>
+        <menuitem id="session_menu" name="Sessions" parent="vips_vc_menu"
+                  action="session_list_action"/>
+        <menuitem id="url_list_menu" name="URL list" parent="vips_vc_menu"
+                  action="url_list_list_action"/>
+        <menuitem id="search_engine_menu" name="Search engine" parent="vips_vc_menu"
+                  action="search_engine_list_action"/>
+        <menuitem id="search_phrases_menu" name="Search phrases" parent="vips_vc_menu"
+                  action="search_phrases_list_action"/>
+        <menuitem id="advert_company_menu" name="Adverting company" parent="vips_vc_menu"
+                  action="advert_company_list_action"/>
+        <menuitem id="advert_engine_menu" name="Adverting engine" parent="vips_vc_menu"
+                  action="advert_engine_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+    </data>
+</openerp>

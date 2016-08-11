@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <template id="my-stat-snippet-ID" inherit_id="website.snippets" name="Clean Theme snippets">
+            <xpath expr="//div[@id='snippet_structure']" position="inside">
+                <div>
+                    <div class="oe_snippet_thumbnail">
+                        <img class="oe_snippet_thumbnail_img" src="/vip_stamp_button_links/static/images/block/links.png" />
+                        <span class="oe_snippet_thumbnail_title">Блок кнопок с сылками</span>
+                    </div>
+
+                    <section class="oe_snippet_body fw_categories">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center mt16 mb32 text-section-head">
+                                    <span>Какая печать или штамп вам необходимы?</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Круглая печать на ручной оснастке</a></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Круглая печать на автоматической оснастке</a></div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+
+                            <div class="btn-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Маленький штамп на ручной оснастке</a></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Маленький штамп на автоматической оснастке</a></div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+
+                            <div class="btn-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Средний штамп на ручной оснастке</a></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Средний штамп на автоматической оснастке</a></div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+
+                            <div class="btn-break"></div>
+
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Большой штамп на ручной оснастке</a></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Большой штамп на автоматической оснастке</a></div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+
+                            <div class="sub-header">А ещё мы можем изготовить вам факсимиле</div>
+
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Факсимиле на ручной оснастке</a></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Факсимиле на автоматической оснастке</a></div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                            <div class="sub-header">Восстановить вашу печать или штамп</div>
+
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Восстановить клише печати</a></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Восстановить клише штампа</a></div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+
+                            <div class="sub-header">Изготовить особые печати</div>
+
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Гербовая печать</a></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4 col-btn-tbl">
+                                    <div><a href="#">Флеш-печать</a></div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+
+            </xpath>
+        </template>
+    </data>
+</openerp>

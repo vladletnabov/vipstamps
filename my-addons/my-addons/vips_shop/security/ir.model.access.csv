@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vips_shop_metro,vips_shop.metro,model_vips_shop_metro,,1,1,1,1
+access_vips_shop_delivery,vips_shop.delivery,model_vips_shop_delivery,,1,1,1,1
+access_vips_shop_color,vips_shop.color,model_vips_shop_color,,1,1,1,1
+access_vips_shop_quick_sale_order,vips_shop.quick_sale_order,model_vips_shop_quick_sale_order,,1,1,1,1
+

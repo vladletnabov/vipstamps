@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <template id="my-stat-snippet-ID" inherit_id="website.snippets" name="Clean Theme snippets">
+            <xpath expr="//div[@id='snippet_structure']" position="inside">
+                <div>
+                    <div class="oe_snippet_thumbnail">
+                        <img class="oe_snippet_thumbnail_img" src="/vip_stamp_best_goods/static/images/block/video.png"/>
+                        <span class="oe_snippet_thumbnail_title">Видео блок</span>
+                    </div>
+
+                    <section class="oe_snippet_body fw_categories">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center mt16 mb32 text-section-head">
+                                    <span>КАК ДЕЛАЮТСЯ ПЕЧАТИ</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7" style="max-height:400px;">
+                                    <img width="100%"  height="400px"  src=""  />
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-4">
+                                    <div class="video-comment-text-block">
+                                        <p>Печати из фотополимера это самый доступный и демократичный способ изготовить печать для ООО или ИП. Он достаточно быстро позволяет произвести нужную печать.</p>
+
+                                        <p>Если Вам печать нужна на один раз, например срочно закрыть документы контрагента, который сейчас недоступен или востановить утраченую печать для списания - это ваш выбор.</p>
+
+                                        <p>Для изготовления печати используется специальная экспонирующая камера, куда помещают трафарет буущей печати обработанный специальным составом фотополимера. В этой камере будущая печать облучается ультрофиолетом и через 15-30 минут у вас на руках новенькая печать.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-break"></div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="video-comment-text-block video-comment-text-block-bottom">
+                                        <p>Печати из резины это наиболее качественный и долговечный вид печатей.
+                                            Именно из такого материала делаются гербовые печати и печати с защитой</p>
+
+                                        <p>Если Вам нужна печать, которая будет служить вам годами верой и правдой - это Ваш выбор.
+                                            Особенно если вы будете очень часто ею пользоваться.
+                                            В отличии от фотополимера она не крошиться со временем и более износостойкая.</p>
+
+                                        <p>Для изготовления печати используется лазерный гравёр. Он чем-то напоминает
+                                            струйный принтер, только вместо головки с блоком чернил по направлеющим
+                                            двигается лазер, который тщательно вырезает из специальной резины печать.
+                                            Через 40-60 минут печать готова.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-7"  style="max-height:400px;">
+                                    <img  width="100%" height="400px" src="" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>

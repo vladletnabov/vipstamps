@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- Станции метро-->
+        <record model="ir.actions.act_window" id="metro_list_action">
+            <field name="name">Станции метро</field>
+            <field name="res_model">vips_shop.metro</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить станцию метро
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="metro_form_view">
+            <field name="name">metro.form</field>
+            <field name="model">vips_shop.metro</field>
+            <field name="arch" type="xml">
+                <form string="Список станций метро">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Название станции"/>
+                            <field name="color_ids" string="Цвет ветки"/>
+                        </group>
+                    </sheet>
+                    <notebook>
+                        <page string="Contacts">
+                            <field name="partners_ids">
+                                <tree string="Registered contacts">
+                                    <field name="name"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Delivery">
+                            <field name="delivery_id">
+                                <tree string="Delivery">
+                                    <field name="name"/>
+                                    <field name="prefix_address" string="Префикс адреса"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="metro_tree_view">
+            <field name="name">metro.tree</field>
+            <field name="model">vips_shop.metro</field>
+            <field name="arch" type="xml">
+                <tree string="Список станций метро">
+                    <field name="name" string="Название станции"/>
+                    <field name="color_ids" string="Цвет ветки"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Конец блока-->
+
+        <!-- Цвета станций -->
+
+        <record model="ir.actions.act_window" id="color_list_action">
+            <field name="name">Цвета линий метро</field>
+            <field name="res_model">vips_shop.color</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить цвет линии метро
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="color_tree_view">
+            <field name="name">color.tree</field>
+            <field name="model">vips_shop.color</field>
+            <field name="arch" type="xml">
+                <tree string="Линии метро">
+                    <field name="name" string="Цвет ветки"/>
+                    <field name="number" string="Номер ветки"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="color_form_view">
+            <field name="name">color.form</field>
+            <field name="model">vips_shop.color</field>
+            <field name="arch" type="xml">
+                <form string="Цвета линий метро (форма)">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Цвет ветки"/>
+                            <field name="color" string="Цвет в html-формате"/>
+                            <field name="number" string="Номер ветки"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Конец блока-->
+
+        <!-- Список филиалов -->
+
+        <record model="ir.actions.act_window" id="filial_list_action">
+            <field name="name">Филиалы</field>
+            <field name="res_model">vips_shop.filial</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить цвет линии метро
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="filial_tree_view">
+            <field name="name">filial.tree</field>
+            <field name="model">vips_shop.filial</field>
+            <field name="arch" type="xml">
+                <tree string="Список филиалов и точек выдачи заказов">
+                    <field name="name" string="Филиал"/>
+                    <field name="type" string="Тип"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="filial_form_view">
+            <field name="name">filial.form</field>
+            <field name="model">vips_shop.filial</field>
+            <field name="arch" type="xml">
+                <form string="Список филиалов и точек выдачи заказов">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Филиал"/>
+                            <field name="type" string="Тип"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- Конец блока-->
+
+        <!-- Список продуктов для быстрого заказа -->
+
+        <record model="ir.actions.act_window" id="quick_price_list_action">
+            <field name="name">Продукты быстрого заказа</field>
+            <field name="res_model">vips_shop.quick_price</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить продукты быстрого заказа
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quick_price_tree_view">
+            <field name="name">quick_price.tree</field>
+            <field name="model">vips_shop.quick_price</field>
+            <field name="arch" type="xml">
+                <tree string="Продукты быстрого заказа">
+                    <field name="name" string="Продукт"/>
+                    <field name="product_id" string="Связанный продукт из прайс-листа"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quick_price_form_view">
+            <field name="name">quick_price.form</field>
+            <field name="model">vips_shop.quick_price</field>
+            <field name="arch" type="xml">
+                <form string="Продукты быстрого заказа">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Филиал"/>
+                            <field name="product_id" string="Связанный продукт из прайс-листа"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- Конец блока-->
+
+
+        <record model="ir.actions.act_window" id="quick_sale_order_list_action">
+            <field name="name">Заказы формы быстрого заказа</field>
+            <field name="res_model">vips_shop.quick_sale_order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить заказы через форму быстрого заказа
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quick_sale_order_tree_view">
+            <field name="name">quick_sale_order.tree</field>
+            <field name="model">vips_shop.quick_sale_order</field>
+            <field name="arch" type="xml">
+                <tree string="Заказы формы быстрого заказа">
+                    <field name="name" string="Номер быстрого заказа"/>
+                    <field name="order_id" string="Основной заказ"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quick_sale_order_form_view">
+            <field name="name">quick_sale_order.form</field>
+            <field name="model">vips_shop.quick_sale_order</field>
+            <field name="arch" type="xml">
+                <form string="Заказы формы быстрого заказа">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Номер быстрого заказа"/>
+                            <field name="order_id" string="Заказ"/>
+                            <field name="partner_id" string="Заказчик"/>
+                            <field name="description" string="Комментарии заказчика к заказу"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+
+
+
+        <!-- top level menu: no parent -->
+        <menuitem id="main_vips_shop_menu" name="VIPShop"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="vips_shop_menu" name="VIPShop"
+                  parent="main_vips_shop_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="metro_menu" name="Станции метро" parent="vips_shop_menu"
+                  action="metro_list_action"/>
+        <menuitem id="color_menu" name="Цвета линий метро" parent="vips_shop_menu"
+                  action="color_list_action"/>
+
+        <menuitem id="filial_menu" name="Филиалы" parent="vips_shop_menu"
+                  action="filial_list_action"/>
+
+        <menuitem id="quick_price_menu" name="Продукты быстрого заказа" parent="vips_shop_menu"
+                  action="quick_price_list_action"/>
+
+        <menuitem id="quick_sale_order_menu" name="Заказы формы быстрого заказа" parent="vips_shop_menu"
+                  action="quick_sale_order_list_action"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+        <record model="vips_vc.session_time_parameter_value" id="session_time_parameter_value0">
+            <field name="name">sessionPing</field>
+            <field name="value">15</field>
+        </record>
+        <record model="vips_vc.session_time_parameter_value" id="session_time_parameter_value1">
+            <field name="name">sessionCookieLive</field>
+            <field name="value">30</field>
+        </record>
+        <!--  -->
+        <!--   <record id="object0" model="vips_vc.vips_vc"> -->
+        <!--     <field name="name">Object 0</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object1" model="vips_vc.vips_vc"> -->
+        <!--     <field name="name">Object 1</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object2" model="vips_vc.vips_vc"> -->
+        <!--     <field name="name">Object 2</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object3" model="vips_vc.vips_vc"> -->
+        <!--     <field name="name">Object 3</field> -->
+        <!--   </record> -->
+        <!--  -->
+        <!--   <record id="object4" model="vips_vc.vips_vc"> -->
+        <!--     <field name="name">Object 4</field> -->
+        <!--   </record> -->
+        <!--  -->
+    </data>
+</openerp>

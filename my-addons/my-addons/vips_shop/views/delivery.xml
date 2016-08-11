@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- Add instructor field to existing view -->
+        <record model="ir.actions.act_window" id="delivery_list_action">
+            <field name="name">Доставка</field>
+            <field name="res_model">vips_shop.delivery</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить платный способ доставки
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="delivery_form_view">
+            <field name="name">delivery.form</field>
+            <field name="model">vips_shop.delivery</field>
+            <field name="arch" type="xml">
+                <form string="Доставка">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Тип"/>
+                            <field name="prefix_address" string="Префикс к адресу"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Привязка к каталогу продуктов">
+                                <field name="product_id">
+                                    <!--<tree string="Registered contacts">
+                                        <field name="name"/>
+                                        <field name="phone"/>
+                                        <field name="email"/>
+                                    </tree>-->
+                                </field>
+                            </page>
+                            <page string="Привязка к адресу доставки">
+                                <p class="oe_form_label">Станция метро</p>
+                                <field name="metro_ids" string="Метро">
+                                    <tree string="Название станции метро">
+                                        <field name="name" string="Название станции метро"/>
+                                    </tree>
+                                </field>
+                                <p class="oe_form_label">Филиал</p>
+                                <field name="filial_ids" string="Филиал">
+                                    <tree string="Название филиала">
+                                        <field name="name" string="Название филиала"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="delivery_tree_view">
+            <field name="name">delivery.tree</field>
+            <field name="model">vips_shop.delivery</field>
+            <field name="arch" type="xml">
+                <tree string="Доставка">
+                    <field name="prefix_address" string="Префикс"/>
+                    <field name="product_id" string="Связанный товар"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="delivery_menu" name="Способы доставки" parent="vips_shop_menu"
+                  action="delivery_list_action"/>
+
+        <!--<record model="ir.actions.act_window" id="contact_cat_list_action">
+            <field name="name">Contact Tags</field>
+            <field name="res_model">res.partner.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>-->
+        <!--<menuitem id="contact_cat_menu" name="Contact Tags"
+                  parent="configuration_menu"
+                  action="contact_cat_list_action"/>-->
+
+        <!--<record model="res.partner.category" id="teacher1">
+            <field name="name">Teacher / Level 1</field>
+        </record>
+        <record model="res.partner.category" id="teacher2">
+            <field name="name">Teacher / Level 2</field>
+        </record>
+        <record model="res.partner.category" id="teacher3">
+            <field name="name">Teacher / Level 3</field>
+        </record>-->
+
+    </data>
+</openerp>

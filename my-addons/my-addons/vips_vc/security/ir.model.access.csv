@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vips_vc_url_list,vips_vc.url_list,model_vips_vc_url_list,,1,0,0,0
+access_vips_vc_session,vips_vc.session,model_vips_vc_session,,1,0,0,0
+access_vips_vc_site_trip,vips_vc.site_trip,model_vips_vc_site_trip,,1,0,0,0
+access_vips_vc_search_engine,vips_vc.search_engine,model_vips_vc_search_engine,,1,0,0,0
+access_vips_vc_search_phrases,vips_vc.search_phrases,model_vips_vc_search_phrases,,1,0,0,0
+access_vips_vc_advert_engine,vips_vc.advert_engine,model_vips_vc_advert_engine,,1,0,0,0
+access_vips_vc_advert_company,vips_vc.advert_company,model_vips_vc_advert_company,,1,0,0,0
+access_vips_vc_session_time_parameter_value,vips_vc.session_time_parameter_value,model_vips_vc_session_time_parameter_value,,1,0,0,0

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="sale_order_shipaddr_form_view">
+            <field name="name">order.shipaddr</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Адрес доставки">
+                        <group>
+                            <field name="shipaddr" domain="[]" context="{'group_by':'partner_id'}">
+                            </field>
+                            <field name="metro"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_order_courier_form_view">
+            <field name="name">sale.order.courier</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Курьер">
+                        <group>
+                            <field name="courier"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_order_typeship_form_view">
+            <field name="name">order.typeship</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="client_order_ref" position="after">
+                            <field name="typeship" string="Тип доставки"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sale_order_usersess_form_view">
+            <field name="name">order.usersess</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="client_order_ref" position="after">
+                            <field name="usersess" string="User Session ID"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

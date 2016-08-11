@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+
+        <template id="my-stat-snippet-ID" inherit_id="website.snippets" name="Clean Theme snippets">
+            <xpath expr="//div[@id='snippet_structure']" position="inside">
+                <div>
+                    <div class="oe_snippet_thumbnail">
+                        <img class="oe_snippet_thumbnail_img" src="/vip_stamp_best_goods/static/images/block/best.png"/>
+                        <span class="oe_snippet_thumbnail_title">Лучшие товары</span>
+                    </div>
+
+                    <section class="oe_snippet_body fw_categories">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center mt16 mb32 text-section-head">
+                                    <span>Самые популярные товары</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel panel-goods">
+                                        <div class="panel-heading text-center panel-heading-goods">
+                                            <span class="text-good-header">Печать по оттиску</span>
+                                            <p class="text-muted text-mutted-light">Круглая печать на ручной оснастке</p>
+                                        </div>
+                                        <div class="panel-body text-center text-muted">
+                                            <div class="div-image-goods">
+                                                <img src="/images/osn-ruch.jpg" />
+                                            </div>
+                                            <span class="text-price-section">
+                                                <b class="text-price">850</b>
+                                                <small>.00 </small>
+                                                <em>руб</em>
+                                            </span>
+                                            <div>за штуку</div>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item-goods active"><B>Материал клише:</B> фотополимер</li>
+                                            <li class="list-group-item-goods"><B>Оснатска:</B> ручная с гербом РФ</li>
+                                            <li class="list-group-item-goods"><B>Штемпельная подушка:</B> отсуствует</li>
+                                            <li class="list-group-item-goods"><B>Доставка:</B> точка выдачи заказа</li>
+                                        </ul>
+                                        <div class="panel-footer text-center">
+                                            <p class="text-muted">
+                                                <i>Бесплатная доставка при заказе 3+ печатей</i>
+                                            </p>
+                                            <a class="btn btn-primary btn-lg btn-color" href="/page/website.contactus">Заказать</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel panel-primary-goods">
+                                        <div class="panel-heading text-center panel-heading-goods">
+                                            <span class="text-good-header">Новая печать</span>
+                                            <p class="text-muted text-mutted-light">Круглая печать на автоматической оснастке Colop R40</p>
+                                        </div>
+                                        <div class="panel-body text-center text-muted">
+                                            <div class="div-image-goods">
+                                                <img src="/images/colop-r40.jpg" />
+                                            </div>
+                                            <span class="text-price-section">
+                                                <b class="text-price">1 200</b>
+                                                <small>.00</small>
+                                                <em>руб</em>
+                                            </span>
+                                            <div>за штуку</div>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item-goods active"><B>Материал клише:</B> резина</li>
+                                            <li class="list-group-item-goods"><B>Оснатска:</B> автоматическая</li>
+                                            <li class="list-group-item-goods"><B>Штемпельная подушка:</B> встроенная</li>
+                                            <li class="list-group-item-goods"><B>Доставка:</B> точка выдачи заказа</li>
+                                        </ul>
+                                        <div class="panel-footer text-center">
+                                            <p class="text-muted">
+                                                <i>Бесплатная доставка при заказе 3+ печатей</i>
+                                            </p>
+                                            <a class="btn btn-primary btn-lg btn-color" href="/page/website.contactus">Заказать</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel panel-goods">
+                                        <div class="panel-heading text-center panel-heading-goods">
+                                            <span class="text-good-header">Клише для печати</span>
+                                            <p class="text-muted  text-mutted-light">Клише для новой печати</p>
+                                        </div>
+                                        <div class="panel-body text-center text-muted">
+
+                                            <div class="div-image-goods">
+                                                <img src="/images/klishe.jpg" />
+                                            </div>
+                                            <span class="text-price-section">
+                                                <b class="text-price">550</b>
+                                                <small>.00 </small>
+                                                <em>руб</em>
+                                            </span>
+                                            <div>за штуку</div>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item-goods active"><B>Материал клише:</B> фотополимер</li>
+                                            <li class="list-group-item-goods"><B>Оснатска:</B> отсутсвует</li>
+                                            <li class="list-group-item-goods"><B>Штемпельная подушка:</B> отсуствует</li>
+                                            <li class="list-group-item-goods"><B>Доставка:</B> точка выдачи заказа</li>
+                                        </ul>
+                                        <div class="panel-footer text-center">
+                                            <p class="text-muted">
+                                                <i>Бесплатная доставка при заказе 3+ печатей</i>
+                                            </p>
+                                            <a class="btn btn-primary btn-lg btn-color" href="/page/website.contactus">Заказать</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>

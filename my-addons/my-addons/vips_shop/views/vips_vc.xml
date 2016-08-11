@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+
+        <record model="ir.ui.view" id="sale_order_typeship_form_view">
+            <field name="name">session.usersess</field>
+            <field name="model">vips_vc.session</field>
+            <field name="inherit_id" ref="vips_vc.session_form_view"/>
+            <field name="arch" type="xml">
+                <notebook>
+                    <page string="Orders">
+                        <field name="order_id"></field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</openerp>

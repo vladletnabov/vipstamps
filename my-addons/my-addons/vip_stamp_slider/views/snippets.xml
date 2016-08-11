@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+      <template id="assets_backend" name="static_resources_demo assets" inherit_id="website.assets_frontend">
+          <xpath expr="." position="inside">
+              <script src="/vip_stamp_slider/static/js/send-form.js" type="text/javascript"></script>
+              <script src="/vip_stamp_slider/static/js/slider.js" type="text/javascript"></script>
+              <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+              <link rel="stylesheet" href="/vip_stamp_slider/static/css/style.css"/>
+              <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"/>
+
+          </xpath>
+      </template>
+
+        <template id="my-stat-snippet-ID" inherit_id="website.snippets" name="Clean Theme snippets">
+            <xpath expr="//div[@id='snippet_structure']" position="inside">
+                <div>
+                    <div class="oe_snippet_thumbnail">
+                        <img class="oe_snippet_thumbnail_img" src="/vip_stamp_slider/static/images/block/slider.jpg"/>
+                        <span class="oe_snippet_thumbnail_title">Верхний слайдер главной страницы</span>
+                    </div>
+
+
+                    <section class="oe_snippet_body fw_categories">
+
+                        <div class="header-block-image">
+                            <div id="slider-wrap" class="row">
+                                <div id="slider" class="col-md-12">
+                                    <div class="slide">
+                                        <img src="vip_stamp_slider/static/images/slider1.jpg" class="slider-img" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="/vip_stamp_slider/static/images/slider2.jpg" class="slider-img" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="/vip_stamp_slider/static/images/slider3.jpg" class="slider-img" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="/vip_stamp_slider/static/images/slider4.jpg" class="slider-img" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-shadow-text">
+
+
+                            </div>
+                            <div class="header-text-image-block">Мы делаем лучшие печати в Москве</div>
+                            <div class="body-text-image-block">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-3 header-image-text-block bottom-block header-image-text-block-1">
+                                            <p class="header-image-text-block-header">Уникальная база печатей</p>
+
+                                            <p>Мы ведём реестр всех печатей и
+                                                штампов когда либо произведённых
+                                                в нашей компании</p>
+                                            <p>По этому восстановить или закзать
+                                                повторную печать  у нас проще чем сходить в магазин за хлебом.
+                                                И быстрее</p>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-3 header-image-text-block bottom-block header-image-text-block-2">
+                                            <p class="header-image-text-block-header">Две технологии</p>
+
+                                            <p>Мы производим печати из резины  и фотополимера.</p>
+                                            <p>Печати и штампы из резины более долговечные, из них делаею гербовые печати и печати с защитой.</p>
+                                            <p>Печати из фотополимера имеют более демократичную цену и приемлемы срок службы до двух лет</p>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-3 header-image-text-block bottom-block header-image-text-block-3">
+                                            <p class="header-image-text-block-header">Пункты выдачи</p>
+
+                                            <p>У нас большое количество пунктов выдачи товара по Москве, а так же Красногорску.</p>
+                                            <p>При желании вы можете заказать доставку курьером</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-text-image-block">
+                                <div class="container">
+                                    <form name="quick_sale_order" action="/vips_shop/quick_order" method="get">
+
+                                    <div class="row">
+                                        <div class="col-md-2"></div>
+                                        <t t-set="product_data" t-value="website.get_quick_product()"/>
+                                        <div class="col-md-3">
+                                                <div class="dropdown header-slider-send-form-element">
+                                                    <!--<label id="select-product" type="text" placeholder="Выберите  продукт"
+                                                           class="dropdown-toggle" data-toggle="dropdown"
+                                                           style="position:relative; left: 0px;"><span>Выберите продукт</span></label>
+                                                    <span class="caret"></span>-->
+                                                    <!--<ul class="dropdown-menu header-slider-send-form-element-dropdown"
+                                                        aria-labelledby="select-product">-->
+
+                                                        <select name="product_id" id="select-product">
+                                                          <!--<option>Slower</option>
+                                                          <option>Slow</option>
+                                                          <option selected="selected">Medium</option>
+                                                          <option>Fast</option>
+                                                          <option>Faster</option>-->
+                                                            <option value="-1" disabled="true" selected="true">Выберите продукт</option>
+                                                            <t t-foreach="product_data" t-as="product">
+                                                                  <option t-att-value="product.product_id.id" ><t t-esc="product.name" /></option>
+                                                            </t>
+                                                        </select>
+
+                                                        <!--<t t-foreach="product_data" t-as="product">
+                                                             <li><a><t t-esc="product.name" /></a></li>
+                                                        </t>-->
+
+                                                        <!--<li><a >Печать</a></li>
+                                                        <li><a >Штамп</a></li>
+                                                        <li><a >Факсимиле</a></li>
+                                                        <li><a >Клише для печати</a></li>-->
+                                                    <!--</ul>-->
+                                                </div>
+
+
+                                        </div>
+                                        <div class="col-md-1"></div>
+
+                                        <t t-set="delivery_data" t-value="website.get_vips_delivery()"/>
+                                        <div class="col-md-3">
+                                            <div class="dropdown header-slider-send-form-element">
+                                                <!--<label id="select-shipping" type="text" placeholder="Выберите  способ доставки"
+                                                       class="dropdown-toggle" data-toggle="dropdown"
+                                                       style="position:relative; left: 0px;"><span>Выберите способ доставки</span></label>
+                                                <ul class="dropdown-menu header-slider-send-form-element-dropdown"
+                                                    aria-labelledby="select-shipping">-->
+                                                <select name="shipping_id" id="select-shipping">
+                                                    <option value="" disabled="true" selected="true" style="color:red;">Выберите способ доставки</option>
+                                                        <t t-foreach="delivery_data" t-as="delivery">
+                                                             <option t-att-value="delivery.id" ><t t-esc="delivery.prefix_address" /></option>
+                                                        </t>
+                                                </select>
+                                                    <!--<li><a >Самовывоз из офиса</a></li>
+                                                    <li><a >Доставка до метро</a></li>
+                                                    <li><a >Доставка по адресу</a></li>
+                                                </ul>-->
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2"><a id="header-send-form" class="btn btn-field-form ">ЗАКАЗАТЬ</a></div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+
+
+                                    <!-- Modal window
+                                    -->
+                                    <div id="modal_form"><!-- Сaмo oкнo -->
+
+                                        <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
+                                        <!-- Тут любoе сoдержимoе -->
+                                        <div class="header-modal-window"><span>Укажите ваши контактные данные</span></div>
+                                        <div class="modal-div-align">
+                                            <input name="qos_name" id="send-form-name" type="text" placeholder="Ваше имя" class="input-form-fio"/>
+                                            <input name="qos_surname" id="send-form-surname" type="text" placeholder="Ваше фамилия" class="input-form-fio"/></div>
+                                        <div class="modal-div-align">
+                                            <input name="qos_phone" id="send-form-phone" type="text" placeholder="Ваш телефон" class="input-form-fio"/>
+                                            <input name="qos_email" id="send-form-email" type="text" placeholder="Ваш e-mail" class="input-form-fio"/>
+                                        </div>
+                                        <div class="modal-div-align"><textarea name="order_description" id="send-form-text" placeholder="Текст сообщения" class="input-form-text"></textarea></div>
+                                        <div class="modal-btn-align"><a id="modal_send" class="btn btn-color btn-modal-form-right">ОПРАВИТЬ</a></div>
+
+                                    </div>
+                                    <div id="overlay"></div><!-- Пoдлoжкa -->
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </section>
+
+
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>
