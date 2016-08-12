@@ -1,11 +1,10 @@
 $(document).ready(function(e) {
-	
-//    $("#mapid.content").empty()
     ymaps.ready(init);
     function init () {
-        var myMap = new ymaps.Map("mapid2", {
+        var myMap = new ymaps.Map("mapid", {
                 center: [55.775, 37.532],
-                zoom: 15
+                zoom: 15,
+		controls: []
             }, {
                 searchControlProvider: 'yandex#search'
             }),
@@ -29,15 +28,13 @@ $(document).ready(function(e) {
                     }
                 }
             );
-
+	
         var myPlacemark = new ymaps.Placemark([55.774872, 37.531442], {
             address: "Москва, Хорошёвское шоссе, 13А, к.2",
             object: "Офис VIP-Штампы на Беговой"
         }, {
             hintLayout: HintLayout
         });
-
-//#	myMap.geoObjects.remove(context);
 
         myMap.geoObjects.add(myPlacemark);
     }

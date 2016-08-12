@@ -133,7 +133,11 @@
                                                 <select name="shipping_id" id="select-shipping">
                                                     <option value="" disabled="true" selected="true" style="color:red;">Выберите способ доставки</option>
                                                         <t t-foreach="delivery_data" t-as="delivery">
-                                                             <option t-att-value="delivery.id" ><t t-esc="delivery.prefix_address" /></option>
+                                                             <option t-att-value="delivery.id"
+                                                                     t-att-data-delivery_product_name="delivery.product_id.name"
+                                                                     t-att-data-delivery_product_id="delivery.product_id.id">
+                                                                 <t t-esc="delivery.prefix_address" />
+                                                             </option>
                                                         </t>
                                                 </select>
                                                     <!--<li><a >Самовывоз из офиса</a></li>

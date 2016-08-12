@@ -505,6 +505,7 @@ class vip_stamp_web_shop(website_sale):
         _logger.error("----> shipping_id: %r", shipping_id)
 
         #_logger.info('create sale order')
+        _logger.error("request.website.sale_get_order(force_create=1) after that ---> ._cart_update(product_id=int( %r ), add_qty=float( %r ), set_qty=float( %r ))", product_id, add_qty, set_qty)
         request.website.sale_get_order(force_create=1)._cart_update(product_id=int(product_id), add_qty=float(add_qty), set_qty=float(set_qty))
         #_logger.info('get sale order')
         sale_order = request.website.sale_get_order(context=context)
