@@ -176,7 +176,7 @@
                 <form string="Продукты быстрого заказа">
                     <sheet>
                         <group>
-                            <field name="name" string="Филиал"/>
+                            <field name="name" string="Название"/>
                             <field name="product_id" string="Связанный продукт из прайс-листа"/>
                         </group>
                     </sheet>

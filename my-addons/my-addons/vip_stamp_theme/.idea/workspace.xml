@@ -64,21 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/odoo/my-modules/vip_stamp_theme/views/layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4242789">
+            <state vertical-scroll-proportion="-49.375">
               <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webcalc.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="webcalc.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/webcalc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.57827103">
+              <caret line="50" column="30" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="32" />
               <folding>
                 <element signature="e#0#39#0" expanded="false" />
               </folding>
@@ -914,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/send-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/less/style-tmpl1.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -982,21 +974,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/webcalc.js">
+    <entry file="file://$USER_HOME$/odoo/my-modules/vip_stamp_theme/views/layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-49.375">
+          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/odoo/my-modules/vip_stamp_theme/views/layout.xml">
+    <entry file="file://$PROJECT_DIR$/static/js/send-form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4242789">
-          <caret line="97" column="18" selection-start-line="97" selection-start-column="18" selection-end-line="97" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/webcalc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57827103">
+          <caret line="50" column="30" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

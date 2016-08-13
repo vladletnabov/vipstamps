@@ -81,50 +81,31 @@
                             </div>
                             <div class="form-text-image-block">
                                 <div class="container">
-                                    <form name="quick_sale_order" action="/vips_shop/quick_order" method="get">
-
+                                    <!--<form name="quick_sale_order" action="/vips_shop/quick_order" method="get">-->
+                                    <form name="quick_sale_order" action="" method="get">
                                     <div class="row">
                                         <div class="col-md-2"></div>
                                         <t t-set="product_data" t-value="website.get_quick_product()"/>
                                         <div class="col-md-3">
-                                                <div class="dropdown header-slider-send-form-element">
-                                                    <!--<label id="select-product" type="text" placeholder="Выберите  продукт"
-                                                           class="dropdown-toggle" data-toggle="dropdown"
-                                                           style="position:relative; left: 0px;"><span>Выберите продукт</span></label>
-                                                    <span class="caret"></span>-->
-                                                    <!--<ul class="dropdown-menu header-slider-send-form-element-dropdown"
-                                                        aria-labelledby="select-product">-->
+                                                <div class="dropdown header-slider-send-form-element quick-saleorder-1">
 
                                                         <select name="product_id" id="select-product">
-                                                          <!--<option>Slower</option>
-                                                          <option>Slow</option>
-                                                          <option selected="selected">Medium</option>
-                                                          <option>Fast</option>
-                                                          <option>Faster</option>-->
+
                                                             <option value="-1" disabled="true" selected="true">Выберите продукт</option>
                                                             <t t-foreach="product_data" t-as="product">
                                                                   <option t-att-value="product.product_id.id" ><t t-esc="product.name" /></option>
                                                             </t>
                                                         </select>
 
-                                                        <!--<t t-foreach="product_data" t-as="product">
-                                                             <li><a><t t-esc="product.name" /></a></li>
-                                                        </t>-->
-
-                                                        <!--<li><a >Печать</a></li>
-                                                        <li><a >Штамп</a></li>
-                                                        <li><a >Факсимиле</a></li>
-                                                        <li><a >Клише для печати</a></li>-->
-                                                    <!--</ul>-->
                                                 </div>
 
 
                                         </div>
-                                        <div class="col-md-1"></div>
+                                        <div class="col-md-1 height15px"></div>
 
                                         <t t-set="delivery_data" t-value="website.get_vips_delivery()"/>
                                         <div class="col-md-3">
-                                            <div class="dropdown header-slider-send-form-element">
+                                            <div class="dropdown header-slider-send-form-element quick-saleorder-2">
                                                 <!--<label id="select-shipping" type="text" placeholder="Выберите  способ доставки"
                                                        class="dropdown-toggle" data-toggle="dropdown"
                                                        style="position:relative; left: 0px;"><span>Выберите способ доставки</span></label>
@@ -148,8 +129,8 @@
 
 
                                         </div>
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-2"><a id="header-send-form" class="btn btn-field-form ">ЗАКАЗАТЬ</a></div>
+                                        <div class="col-md-1 height15px"></div>
+                                        <div class="col-md-2 quick-saleorder-3"><a id="header-send-form" class="btn btn-field-form ">ЗАКАЗАТЬ</a></div>
                                         <div class="col-md-1"></div>
                                     </div>
 
@@ -174,6 +155,13 @@
                                     </div>
                                     <div id="overlay"></div><!-- Пoдлoжкa -->
                                     </form>
+                                    <div id="result_query_modal">
+                                        <span id="modal_close_result_query_modal">X</span> <!-- Кнoпкa зaкрыть -->
+                                        <div class="report_result_query_modal"></div>
+                                        <div class="result_query_modal_btn_pos"><a id="close_result_query_modal" class="btn btn-color btn-color-qw-mdl">ЗАКРЫТЬ</a></div>
+
+                                    </div>
+                                    <div id="overlay_query"></div>
 
                                 </div>
 

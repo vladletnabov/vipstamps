@@ -485,12 +485,15 @@ class vip_stamp_web_shop(website_sale):
         return request.website.render("vips_shop.payment", values)
 
 
-    @http.route(['/vips_shop/quick_order'], type='http', auth="public", methods=['GET'], website=True)
+    #@http.route(['/vips_shop/quick_order'], type='http', auth="public", methods=['GET'], website=True)
+    @http.route(['/vips_shop/quick_order'], type='json', auth='public', website=True)
     def quick_order(self, product_id, order_description,  **kw):  #add_qty=1, set_qty=0,
         cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
         add_qty=1
         set_qty=0
         _logger.info('quick_order')
+        _logger.error("!!!=> getting data product_id: %r, shipping_id: %r, delivery_product_id: %r", product_id,
+                      kw['shipping_id'], kw['delivery_product_id'])
         orm_quick_order = request.env['vips_shop.quick_sale_order']
         orm_partner = request.env['res.partner']
 
@@ -501,15 +504,23 @@ class vip_stamp_web_shop(website_sale):
         countries = orm_country.browse(country_ids)
 
         _logger.error("----> Rcived kw['shipping_id']: %r", kw['shipping_id'])
-        shipping_id = orm_delivery.sudo().browse(int(kw['shipping_id'])).product_id.id
+        #shipping_id = orm_delivery.sudo().browse(int(kw['shipping_id'])).product_id.id
+        shipping_id = orm_delivery.sudo().browse(int(kw['delivery_product_id']))
         _logger.error("----> shipping_id: %r", shipping_id)
 
-        #_logger.info('create sale order')
-        _logger.error("request.website.sale_get_order(force_create=1) after that ---> ._cart_update(product_id=int( %r ), add_qty=float( %r ), set_qty=float( %r ))", product_id, add_qty, set_qty)
-        request.website.sale_get_order(force_create=1)._cart_update(product_id=int(product_id), add_qty=float(add_qty), set_qty=float(set_qty))
+        # делаем ордер заказа и добавляем сразу же продукт быстрого заказа
+        try:
+            #_logger.info('create sale order')
+            #_logger.error("request.website.sale_get_order(force_create=1) after that ---> ._cart_update(product_id=int( %r ), add_qty=float( %r ), set_qty=float( %r ))", product_id, add_qty, set_qty)
+            request.website.sale_get_order(force_create=1)._cart_update(product_id=int(product_id), add_qty=float(add_qty), set_qty=float(set_qty))
+        except:
+            _logger.error('Error while register new order via quick_order()')
+            _logger.error("request.website.sale_get_order(force_create=1) after that ---> ._cart_update(product_id=int( %r ), add_qty=float( %r ), set_qty=float( %r ))", product_id, add_qty, set_qty)
+            return {'error':'error'}
+
         #_logger.info('get sale order')
         sale_order = request.website.sale_get_order(context=context)
-        sale_order._cart_update(product_id=int(shipping_id), add_qty=float(add_qty), set_qty=float(set_qty))
+        #sale_order._cart_update(product_id=int(shipping_id), add_qty=float(add_qty), set_qty=float(set_qty))
         _logger.info("sale order ID: %r, partner_id: %r , order_description : %r", sale_order.id,
                      sale_order.partner_shipping_id.id, order_description)
         quick_order = orm_quick_order.create({
@@ -552,9 +563,11 @@ class vip_stamp_web_shop(website_sale):
         quick_order.write({'partner_id': partner_id})
         quick_order.env.cr.commit()
         sale_order.env.cr.commit()
+        so_number = sale_order.name
         request.website.sale_reset(context=context)
 
-        return request.redirect("/")
+        #return request.redirect("/")'''
+        return {'error':'ok', 'saleorder': so_number}
 
 
 # class VipStampWebShop(http.Controller):
