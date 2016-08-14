@@ -105,7 +105,7 @@ $(document).ready(function(e) {
             console.debug('hide modal window');
 
 
-            $(".input-form-fio").val('');
+            //-------> $(".input-form-fio").val('');
 
 
             //$(".input-form-text").parent().css("border-color", "#ecfef8");
@@ -130,15 +130,18 @@ $(document).ready(function(e) {
         formData['delivery_product_id'] = $("#select-shipping :selected").attr('data-delivery_product_id') ;
         formData['delivery_product_name'] = $("#select-shipping :selected").attr('data-delivery_product_name') ;*/
 
+        console.debug($("input#send-form-name").val());
+
+
         var formData = {
             qos_name: $("#send-form-name").val(),
             qos_surname: $("#send-form-surname").val(),
             qos_email: $("#send-form-email").val(),
             qos_phone: $("#send-form-phone").val(),
-            qos_name_text: $("#send-form-name :selected").text(),
-            qos_surname_text: $("#send-form-surname :selected").text(),
-            qos_email_text: $("#send-form-email :selected").text(),
-            qos_phone_text: $("#send-form-phone :selected").text(),
+            qos_name_text: $("#send-form-name").text(),
+            qos_surname_text: $("#send-form-surname").text(),
+            qos_email_text: $("#send-form-email").text(),
+            qos_phone_text: $("#send-form-phone").text(),
             order_description: $("#send-form-text").text(),
             product_id: $("#select-product").val(),
             product_name: $("#select-product").text(),
@@ -150,8 +153,11 @@ $(document).ready(function(e) {
         console.debug(formData);
 
         $("#header-send-form").hide();
-
         send_request_result_query(formData);
+        /*$("div.report_result_query_modal").empty();
+        request_result_ok('OK-TEST');
+        $("#header-send-form").show();*/
+        clearFormFields();
 
 
     });
@@ -161,6 +167,11 @@ $(document).ready(function(e) {
     });
 });
 
+
+function clearFormFields(){
+    $(".input-form-fio").val('');
+    $(".input-form-text").text('');
+}
 
 function send_request_result_query(sendData){
     var requestURL = '/vips_shop/quick_order';

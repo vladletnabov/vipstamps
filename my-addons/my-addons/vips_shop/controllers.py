@@ -520,7 +520,7 @@ class vip_stamp_web_shop(website_sale):
 
         #_logger.info('get sale order')
         sale_order = request.website.sale_get_order(context=context)
-        #sale_order._cart_update(product_id=int(shipping_id), add_qty=float(add_qty), set_qty=float(set_qty))
+        sale_order._cart_update(product_id=int(shipping_id), add_qty=float(add_qty), set_qty=float(set_qty))
         _logger.info("sale order ID: %r, partner_id: %r , order_description : %r", sale_order.id,
                      sale_order.partner_shipping_id.id, order_description)
         quick_order = orm_quick_order.create({
