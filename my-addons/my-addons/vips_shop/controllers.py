@@ -361,7 +361,8 @@ class vip_stamp_web_shop(website_sale):
                 line_ids[delivery.product_id.id] = orderline_id
 
         for product_id in line_ids:
-            value = order._cart_update(product_id=product_id, line_id=line_ids[product_id], add_qty=0, set_qty=0)
+            _logger.error("order._cart_update(product_id=%r, line_id=%r, add_qty=0, set_qty=0)", product_id, line_ids[product_id].id )
+            value = order._cart_update(product_id=product_id, line_id=line_ids[product_id].id, add_qty=None, set_qty=None)
 
         _logger.error("---!! post: %r", post)
         shipping_id = int(post[0]['shipping_id'])
