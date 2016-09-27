@@ -187,7 +187,7 @@
 
         <!-- Конец блока-->
 
-
+        <!-- Заказы -->
         <record model="ir.actions.act_window" id="quick_sale_order_list_action">
             <field name="name">Заказы формы быстрого заказа</field>
             <field name="res_model">vips_shop.quick_sale_order</field>
@@ -227,8 +227,386 @@
                 </form>
             </field>
         </record>
+        <!-- Конец блока-->
 
 
+        <!-- Блок-->
+
+        <record model="ir.actions.act_window" id="salepersone_list_action">
+            <field name="name">Менеджер заказов с сайта</field>
+            <field name="res_model">vips_shop.salepersone</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить менеджера по умолчанию
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="salepersone_tree_view">
+            <field name="name">salepersone.tree</field>
+            <field name="model">vips_shop.salepersone</field>
+            <field name="arch" type="xml">
+                <tree string="Менеджер по умолчанию">
+                    <field name="name" string="Имя"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="salepersone_form_view">
+            <field name="name">salepersone.form</field>
+            <field name="model">vips_shop.salepersone</field>
+            <field name="arch" type="xml">
+                <form string="Менеджер по умолчанию">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Имя"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Конец блока-->
+
+        <!-- Блок-->
+
+        <record model="ir.actions.act_window" id="fp_product_list_action">
+            <field name="name">Продукты для филалов</field>
+            <field name="res_model">vips_shop.fp_product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить продукты для филиалов
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fp_product_tree_view">
+            <field name="name">fp_product.tree</field>
+            <field name="model">vips_shop.fp_product</field>
+            <field name="arch" type="xml">
+                <tree string="Набор продуктов">
+                    <field name="name" string="Название"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fp_product_form_view">
+            <field name="name">fp_product.form</field>
+            <field name="model">vips_shop.fp_product</field>
+            <field name="arch" type="xml">
+                <form string="Набор продуктов">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Название"/>
+                            <field name="active" string="Активный набо"/>
+                        </group>
+                        <notebook>
+                        <page string="Печати">
+                            <field name="rstamp_ids">
+                                <!--<tree string="Печати">
+                                    <field name="name" string="Краткое название"/>
+                                    <field name="cushion" string="Штемпельная подушка"/>
+                                    <field name="equipment" string="Оснастка"/>
+                                    <field name="product_id" string="Связаннаый продукт"/>
+                                </tree>-->
+                            </field>
+                        </page>
+                        <page string="Штампы на ручке">
+                            <field name="sqstamp_man_ids">
+                                <!--<tree string="Штампы на ручке">
+                                    <field name="name" string="Краткое название"/>
+                                    <field name="cushion" string="Штемпельная подушка"/>
+                                    <field name="equipment" string="Оснастка"/>
+                                    <field name="product_id" string="Связаннаый продукт"/>
+                                </tree>-->
+                            </field>
+                        </page>
+                        <page string="Штампы на автомате">
+                            <field name="sqstamp_auto_ids">
+                                <!--<tree string="Штампы на автомате">
+                                    <field name="name" string="Краткое название"/>
+                                    <field name="cushion" string="Штемпельная подушка"/>
+                                    <field name="equipment" string="Оснастка"/>
+                                    <field name="product_id" string="Связаннаый продукт"/>
+                                </tree>-->
+                            </field>
+                        </page>
+                        <page string="Факсимиле">
+                            <field name="faximile_ids">
+                                <!--<tree string="Факсимиле">
+                                    <field name="name" string="Краткое название"/>
+                                    <field name="cushion" string="Штемпельная подушка"/>
+                                    <field name="equipment" string="Оснастка"/>
+                                    <field name="product_id" string="Связаннаый продукт"/>
+                                </tree>-->
+                            </field>
+                        </page>
+                    </notebook>
+                    </sheet>
+
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Конец блока-->
+        <!-- Блок-->
+
+        <record model="ir.actions.act_window" id="fp_product_param_list_action">
+            <field name="name">Продукты для набора</field>
+            <field name="res_model">vips_shop.fp_product_param</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить продукт для набора продуктов филиала
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fp_product_param_tree_view">
+            <field name="name">fp_product_param.tree</field>
+            <field name="model">vips_shop.fp_product_param</field>
+            <field name="arch" type="xml">
+                <tree string="Продукт для набора">
+                    <field name="name" string="Наименование"/>
+                    <field name="cushion" string="Подушка"/>
+                    <field name="equipment" string="Оснастка"/>
+                    <field name="product_id" string="Связанный продукт"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fp_product_param_form_view">
+            <field name="name">fp_product_param.form</field>
+            <field name="model">vips_shop.fp_product_param</field>
+            <field name="arch" type="xml">
+                <form string="Продукт для набора">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Имя"/>
+                            <field name="cushion" string="Подушка"/>
+                            <field name="equipment" string="Оснастка"/>
+                            <field name="product_id" string="Связанный продукт"/>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Конец блока-->
+        <!-- Блок-->
+
+        <record model="ir.actions.act_window" id="fp_product_group_list_action">
+            <field name="name">Групы продуктов</field>
+            <field name="res_model">vips_shop.fp_product_group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить группу продуктов
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fp_product_group_tree_view">
+            <field name="name">fp_product_group.tree</field>
+            <field name="model">vips_shop.fp_product_group</field>
+            <field name="arch" type="xml">
+                <tree string="Группа продуктов">
+                    <field name="name" string="Наименование"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fp_product_group_form_view">
+            <field name="name">fp_product_group.form</field>
+            <field name="model">vips_shop.fp_product_group</field>
+            <field name="arch" type="xml">
+                <form string="Группа продуктов">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Название"/>
+                            <field name="fp_product_param_id" string="Привязанные продукты"/>
+                        </group>
+                    </sheet>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Конец блока-->
+
+        <!-- Блок-->
+
+        <record model="ir.actions.act_window" id="filial_page_list_action">
+            <field name="name">Страницы</field>
+            <field name="res_model">vips_shop.filial_page</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить страницу филиала
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="filial_page_tree_view">
+            <field name="name">filial_page.tree</field>
+            <field name="model">vips_shop.filial_page</field>
+            <field name="arch" type="xml">
+                <tree string="Страницы">
+                    <field name="name" string="Наименование"/>
+                    <field name="url_name" string="ЧПУ наименование страницы"/>
+                    <field name="predlog" string="Предлог"/>
+                    <field name="padej" string="Название в падеже"/>
+                    <field name="header_text" string="Заголовок страницы"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="filial_page_form_view">
+            <field name="name">filial_page.form</field>
+            <field name="model">vips_shop.filial_page</field>
+            <field name="arch" type="xml">
+                <form string="Страницы">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Наименование"/>
+                            <field name="url_name" string="ЧПУ наименование страницы"/>
+                            <field name="predlog" string="Предлог"/>
+                            <field name="padej" string="Название в падеже"/>
+                        </group>
+                        <notebook>
+                            <page string="Заголовки">
+                                <group>
+                                    <field name="header_text" string="Заголовок 1-го уровня"/>
+                                    <field name="sub_header_text" string="Заголовок 2-го уровня"/>
+                                    <field name="lvl3_header_text" string="Заголовок 3-го уровня"/>
+                                </group>
+                            </page>
+                            <page string="Текст на странице">
+                                <field name="main_text" string="Основной текст страницы"/>
+                            </page>
+                            <page string="Баннер">
+                                <field name="banner_id" string="Баннер страницы"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Конец блока-->
+        <!-- Блок-->
+
+        <record model="ir.actions.act_window" id="filial_banner_list_action">
+            <field name="name">Баннеры</field>
+            <field name="res_model">vips_shop.filial_banner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить баннер
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="filial_banner_tree_view">
+            <field name="name">filial_banner.tree</field>
+            <field name="model">vips_shop.filial_banner</field>
+            <field name="arch" type="xml">
+                <tree string="Баннер">
+                    <field name="name" string="Наименование"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="filial_banner_form_view">
+            <field name="name">filial_banner.form</field>
+            <field name="model">vips_shop.filial_banner</field>
+            <field name="arch" type="xml">
+                <form string="Баннер">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Название"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Слайды банера">
+                                <field name="banner_item_ids" string="Слайды"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Конец блока-->
+
+        <!-- Блок-->
+
+        <record model="ir.actions.act_window" id="banner_item_list_action">
+            <field name="name">Слайды баннера</field>
+            <field name="res_model">vips_shop.banner_item</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Добавить слайд баннера
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="banner_item_tree_view">
+            <field name="name">banner_item.tree</field>
+            <field name="model">vips_shop.banner_item</field>
+            <field name="arch" type="xml">
+                <tree string="Слайды баненра">
+                    <field name="name" string="Наименование"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="banner_item_form_view">
+            <field name="name">banner_item.form</field>
+            <field name="model">vips_shop.banner_item</field>
+            <field name="arch" type="xml">
+                <form string="Слайды баннера">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Название"/>
+                            <field name="text" string="Текст баннера"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Изображение">
+                                <field name="image" widget="image" class="oe_avatar oe_left"/>
+                            </page>
+                            <page string="Привязка к банерам">
+                                <field name="filail_baner_ids" />
+                            </page>
+                        </notebook>
+                    </sheet>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Конец блока-->
 
 
 
@@ -241,19 +619,46 @@
         <!-- the following menuitem should appear *after*
              its parent openacademy_menu and *after* its
              action course_list_action -->
-        <menuitem id="metro_menu" name="Станции метро" parent="vips_shop_menu"
+
+        <menuitem id="metro_line_menu" name="Пивязка к метро"
+                  parent="main_vips_shop_menu"/>
+
+        <menuitem id="metro_menu" name="Станции метро" parent="metro_line_menu"
                   action="metro_list_action"/>
-        <menuitem id="color_menu" name="Цвета линий метро" parent="vips_shop_menu"
+        <menuitem id="color_menu" name="Цвета линий метро" parent="metro_line_menu"
                   action="color_list_action"/>
 
         <menuitem id="filial_menu" name="Филиалы" parent="vips_shop_menu"
                   action="filial_list_action"/>
 
-        <menuitem id="quick_price_menu" name="Продукты быстрого заказа" parent="vips_shop_menu"
+        <menuitem id="quick_orders_menu" name="Быстрые заказы"
+                  parent="main_vips_shop_menu"/>
+
+        <menuitem id="quick_price_menu" name="Продукты быстрого заказа" parent="quick_orders_menu"
                   action="quick_price_list_action"/>
 
-        <menuitem id="quick_sale_order_menu" name="Заказы формы быстрого заказа" parent="vips_shop_menu"
+        <menuitem id="quick_sale_order_menu" name="Заказы формы быстрого заказа" parent="quick_orders_menu"
                   action="quick_sale_order_list_action"/>
+
+
+        <menuitem id="salepersone_menu" name="Менеджер заказов" parent="vips_shop_menu"
+                  action="salepersone_list_action"/>
+
+        <menuitem id="filial_pages_menu" name="Страницы филиалов"
+                  parent="main_vips_shop_menu"/>
+
+        <menuitem id="fp_product_menu" name="Наборы продуктов для филиала" parent="filial_pages_menu"
+                  action="fp_product_list_action"/>
+        <menuitem id="fp_product_param_menu" name="Продукты для набора" parent="filial_pages_menu"
+                  action="fp_product_param_list_action"/>
+        <menuitem id="fp_product_group_menu" name="Группа продуктов" parent="filial_pages_menu"
+                  action="fp_product_group_list_action"/>
+        <menuitem id="filial_page_menu" name="Страницы" parent="filial_pages_menu"
+                  action="filial_page_list_action"/>
+        <menuitem id="filial_banner_menu" name="Баннеры" parent="filial_pages_menu"
+                  action="filial_banner_list_action"/>
+        <menuitem id="banner_item_menu" name="Слайды баннера" parent="filial_pages_menu"
+                  action="banner_item_list_action"/>
 
     </data>
 </openerp>

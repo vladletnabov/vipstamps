@@ -1,0 +1,176 @@
+.div-image-goods{
+    margin:-15px;
+}
+.list-group-item-goods-price {
+    text-align: center;
+}
+.list-group-item-goods-price-value {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.name-product{
+        position: absolute;
+        bottom:0;
+        left:0;
+    background-image: url('/vips_shop/static/src/images/bg-price.png');
+        /*background-color: #ddd;
+        opacity:0.8;*/
+        width: 100%;
+        padding:10px;
+        max-height:30%;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+    }
+.div-image-goods, .div-image-goods > img {
+    position:relative;
+}
+
+.div-image-goods:hover .name-product{
+    height: 100%;
+    max-height:100%;
+}
+.div-image-goods:hover .header-name-product{
+    display: none;
+}
+.div-image-goods:hover .glyphicon-plus{
+    display: block;
+    padding-top:35%;
+    font-size: 36px;
+}
+
+.div-image-goods .glyphicon-plus {
+    display: none;
+}
+.list-select{
+    z-index: 2;
+    color: #fff;
+    background-color: #015021;
+    border-color: #015021;
+}
+.btn-color-ordering{
+    background-color: #015021;
+    border-color: #47b359;
+    width:100%;
+}
+.btn-color-ordering:hover{
+    /*background-color: #163858;
+    border-color: #015021;*/
+    background-color: darkorange;
+    border-color: orangered;
+}
+.panel-goods-green{
+    border: 1px solid #015021;
+}
+.no-decore, .no-decore:hover, .no-decore:active{
+    text-decoration: none;
+    color: #fff;
+}
+.hid-overflow{
+    overflow: hidden;
+}
+.header-page-image{
+    height:400px;
+}
+.slide img{
+    height: 400px;
+}
+#page-slider{
+    height:400px;
+}
+.slide{
+    text-align: center;
+}
+.slide .slide-text {
+    position: absolute;
+    left:10px;
+    bottom:10px;
+    z-index: 10;
+    width:40%;
+}
+@media (max-width: 767px){
+    .slide .slide-text {
+        position: absolute;
+        left:0px;
+        bottom:10px;
+        z-index: 10;
+        width:100%;
+    }
+}
+
+@media (min-width: 768px){
+    .slide .slide-text {
+        position: absolute;
+        left:10px;
+        bottom:10px;
+        z-index: 10;
+        width:40%;
+    }
+}
+
+.slide-text .slide-text-header {
+    background-image: url('/vips_shop/static/src/images/orange-bg.png');
+    padding:15px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: left;
+    width:100%;
+}
+/*.slide-text .slide-text-header:hover {
+    background-image: url('/vips_shop/static/src/images/liteorange-bg.png');
+}*/
+.slide-text .slide-text-body {
+    background-image: url('/vips_shop/static/src/images/green-bg.png');
+    padding:15px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: left;
+    width:100%;
+}
+/*.slide-text .slide-text-body:hover {
+    background-image: url('/vips_shop/static/src/images/liteorange-bg.png');
+}*/
+.header-filial-page {
+    z-index: 15;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    text-align: center;
+    background-color: aliceblue;
+    opacity: 0.9;
+}
+.header-block{
+    position: relative;
+    height:400px;
+}
+.page-main-text h3, .page-main-text h4 {
+    text-align: center;
+}
+.center-block{
+    text-align: center;
+}
+.our-preference-text{
+    font-size: 14px;
+    font-weight: bold;
+}
+.color-dark-green{
+    color: #015021;
+}
+.col-md-2:hover > .color-dark-green {
+    color: orangered;
+}
+.col-md-2:hover > .color-dark-green  > span{
+    color: darkorange;
+}
+.header-why-vips{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
+    padding: 15px;
+}

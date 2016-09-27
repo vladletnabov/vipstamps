@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+<!--        <record id="sale_view_order_form" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="client_order_ref" position="after">
+                    <field name="x_daterequired" string="Когда должен быть закрыт"/>
+                    <field name="x_rush" string="Срочный заказ"/>
+                </field>
+            </field>
+        </record>-->
+        <record id="sale_view_order_form" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!--<button name="print_quotation" position="after">
+                    <button name="approve_art" string="Согласовать макет" states="draft,sent" groups="base.group_user"/>
+                </button>
+                <button name="print_quotation" position="after">
+                   <button name="approve_art" string="Заказ утверждён" states="approve_art"/>
+                </button>
+                <button name="print_quotation" position="attributes">
+                    <attribute name="states">draft,sent,art_approved</attribute>
+                </button>
+                <button name="cancel" position="attributes">
+                    <attribute name="states">draft,sent,art_approved</attribute>
+                </button>-->
+                <field name="client_order_ref" position="after">
+                    <field name="x_daterequired" string="Требуемая дата закрытия заказа"/>
+                    <field name="x_rush" string="Срочный заказ"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

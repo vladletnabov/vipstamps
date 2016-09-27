@@ -13,13 +13,13 @@
       <template id="assets_backend" name="static_resources_demo assets" inherit_id="website.assets_frontend">
           <xpath expr="." position="inside">
               <link rel="stylesheet" href="/vip_stamp_theme/static/css/style-tmpl1.css"/>
-<!--
-              <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+              <!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
               <script src="/vip_stamp_theme/static/js/yamap.js" type="text/javascript"></script>
               <script src="/vip_stamp_theme/static/js/select-filial.js" type="text/javascript"></script>
               <script src="/vip_stamp_theme/static/js/send-form.js" type="text/javascript"></script>
-              <script src="/vip_stamp_theme/static/js/webcalc.js" type="text/javascript"></script>
--->
+              <script src="/vip_stamp_theme/static/js/webcalc.js" type="text/javascript"></script>-->
+
           </xpath>
       </template>
 
@@ -29,7 +29,7 @@
           <!-- Add an element before the top menu  -->
           <xpath expr="//div[@id='wrapwrap']/header/div" position="before">
 
-
+              <t t-set="filial_list" t-value="website.get_all_filial_pages()"/>
 
               <!--<link rel="stylesheet" href="/vip_stamp_theme/static/css/style-tmpl1.css"/>-->
               <div class="top-header ">
@@ -46,11 +46,16 @@
                                         Москва, м.Беговая
                                     </label>
                                     <span class="caret"></span>
-                                    <ul class="dropdown-menu dropdown-poi-office" aria-labelledby="select-poi-office">
+                                    <!--<ul class="dropdown-menu dropdown-poi-office" aria-labelledby="select-poi-office">
                                         <li><a >Москва, м.Беговая</a></li>
                                         <li><a >Москва, м. Деловой центр</a></li>
                                         <li><a >Москва, м. Полежаевская</a></li>
                                         <li><a >МО, Красногорск</a></li>
+                                    </ul>-->
+                                    <ul class="dropdown-menu dropdown-poi-office" aria-labelledby="select-poi-office">
+                                        <t t-foreach="filial_list" t-as="filial">
+                                            <li><a t-attf-href="/salepage/#{ filial.url_name }">Москва, <t t-esc="filial.name"/></a></li>
+                                        </t>
                                     </ul>
                                 </div>
                                 <span id="office-address">Хорошёвское шоссе 13а, корп.2</span>
@@ -77,7 +82,7 @@
 
 
 
-     <template id="footer_map" inherit_id="website.layout" name="Footer map">
+     <!--<template id="footer_map" inherit_id="website.layout" name="Footer map">
         <xpath expr="//footer[last()]" position="before">
 
             <div class="map-block">
@@ -95,6 +100,6 @@
                 </div>
             </div>
         </xpath>
-    </template>
+    </template>-->
   </data>
 </openerp>

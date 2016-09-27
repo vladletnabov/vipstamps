@@ -26,19 +26,44 @@ class sale_order(osv.osv):
 
 
     _columns = {
-    #'shipaddr' : fields.many2many('res.partner', string="Shipping address", readonly=False),
+        'x_daterequired': fields.date('Date Required'),
+        'x_rush': fields.boolean('Rush Order'),
+        #'shipaddr' : fields.many2many('res.partner', string="Shipping address", readonly=False),
 
-    #'shipaddr' : fields.many2many('res.partner', 'vips_shop_order_to_ship_rel', 'shipaddr', 'partner_id', string="Shipping address"),
-    'shipaddr' : fields.many2one('res.partner',string="Shipping address"),
-    'metro'    : fields.many2one('vips_shop.metro', string="Metro stations"),
-    'typeship' : fields.many2one('vips_shop.delivery',  string="Type delivery", readonly=False),
-    # priceship= через typeship привязка к продукту
-    #'courier'  : fields.many2many('res.partner', 'vips_shop_courier_for_ship_rel', 'sale_order_id', 'partner_id',string="Shipping courier", readonly=False),
-    'courier'  : fields.many2one('res.partner', string="Shipping courier", readonly=False),
-    #'usersess' : fields.one2many('vips_vc.session', 'order_id', string="Session customer", readonly=False),
-    'usersess' : fields.many2one('vips_vc.session', string="Session customer", readonly=False),
-    'quick_order_id' : fields.one2many('vips_shop.quick_sale_order', 'order_id', string="Быстрый заказ", readonly=False),
+        #'shipaddr' : fields.many2many('res.partner', 'vips_shop_order_to_ship_rel', 'shipaddr', 'partner_id', string="Shipping address"),
+        'shipaddr' : fields.many2one('res.partner',string="Shipping address"),
+        'metro'    : fields.many2one('vips_shop.metro', string="Metro stations"),
+        'typeship' : fields.many2one('vips_shop.delivery',  string="Type delivery", readonly=False),
+        # priceship= через typeship привязка к продукту
+        #'courier'  : fields.many2many('res.partner', 'vips_shop_courier_for_ship_rel', 'sale_order_id', 'partner_id',string="Shipping courier", readonly=False),
+        'courier'  : fields.many2one('res.partner', string="Shipping courier", readonly=False),
+        #'usersess' : fields.one2many('vips_vc.session', 'order_id', string="Session customer", readonly=False),
+        'usersess' : fields.many2one('vips_vc.session', string="Session customer", readonly=False),
+        'quick_order_id' : fields.one2many('vips_shop.quick_sale_order', 'order_id', string="Быстрый заказ", readonly=False),
+        'state': fields.selection([
+            ('draft', 'Draft Quotation'),
+            ('sent', 'Quotation Sent'),
+            ('art_approved', 'Approve Art'),
+            ('cancel', 'Cancelled'),
+            ('waiting_date', 'Waiting Schedule'),
+            ('progress', 'Sales Order'),
+            ('manual', 'Sale to Invoice'),
+            ('shipping_except', 'Shipping Exception'),
+            ('invoice_except', 'Invoice Exception'),
+            ('done', 'Done'),
+            ], 'Status', readonly=True, copy=False, help="Gives the status of the quotation or sales order.\
+                \nThe exception status is automatically set when a cancel operation occurs \
+                in the invoice validation (Invoice Exception) or in the picking list process (Shipping Exception).\nThe 'Waiting Schedule' status is set when the invoice is confirmed\
+                but waiting for the scheduler to run on the order date.", select=True),
     }
+
+    def is_art_approved(self, cr, uid, ids, context=None):
+        context = context or {}
+        for o in self.browse(cr, uid, ids):
+            if not any(line.state != 'cancel' for line in o.order_line):
+                raise osv.except_osv(_('Error!'),_('You cannot approve a sales order which has no line.'))
+            self.write(cr, uid, [o.id], {'state': 'art_approved'})
+        return True
 
 class website(orm.Model):
     _inherit = 'website'
@@ -128,3 +153,4 @@ class website(orm.Model):
             return None
 
         return sale_order
+

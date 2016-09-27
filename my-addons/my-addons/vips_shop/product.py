@@ -14,4 +14,5 @@ class product(models.Model):
     station_ids = fields.Many2many('vips_shop.metro', string="Metro stations", readonly=False)
     delivery_ids = fields.One2many('vips_shop.delivery', 'product_id', string="Delivery to")
     quick_price_ids = fields.One2many('vips_shop.quick_price', 'product_id', string="Quick price product")
+    fp_param_id = fields.One2many('vips_shop.fp_product_param',  'product_id', string='Продукт страницы филиала', index=True)
 

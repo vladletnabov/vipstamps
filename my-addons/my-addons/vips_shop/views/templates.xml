@@ -4,6 +4,7 @@
         <template id="assets_backend" name="vips_shop assets" inherit_id="website.assets_frontend">
           <xpath expr="." position="inside">
               <script src="/vips_shop/static/src/js/website_sale_ext.js" type="text/javascript"></script>
+              <link href="/vips_shop/static/src/css/style.css" rel="stylesheet"/>
 
           </xpath>
       </template>
@@ -410,7 +411,7 @@
                 <t t-if="variant_id.attribute_id.type in ['select', 'hidden']">
                   <select class="form-control js_variant_change" t-att-name="'attribute-%s-%s' % (product.id, variant_id.attribute_id.id)">
                     <t t-foreach="variant_id.value_ids" t-as="value_id">
-                      <option t-att-value="value_id.id">
+                      <option t-att-value="value_id.id" t-att-selected="value_id.price == 0">
                           <span t-field="value_id.name"/>
                           <span t-if="value_id.price_extra">
                               <t t-esc="value_id.price_extra > 0 and '+' or ''"/><span t-field="value_id.price_extra" style="white-space: nowrap;" t-field-options='{
@@ -418,6 +419,7 @@
                                         "from_currency": "product.company_id.currency_id",
                                        "display_currency": "user_id.partner_id.property_product_pricelist.currency_id"
                                    }'/>
+                              asdasdadsad <t t-esc="value_id.price" />
                           </span>
                       </option>
                     </t>
@@ -464,6 +466,263 @@
     </xpath>
 </template>
 
+
+        <template id="indexpage2">
+            <t t-call="website.layout">
+                <t t-set="title"><t t-esc="page_data.name"/> - VIP-Штампы</t>
+                <div class="oe_structure">
+                    <!--<div class="container">
+                        <t t-foreach="teachers" t-as="teacher">
+                            <p><t t-esc="teacher"/></p>
+                        </t>
+                    </div>-->
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="header-block">
+                                <div class="header-page-image">
+                                    <div class="header-filial-page"><h1><t t-esc="page_data.header_text"/> <t t-esc="page_data.predlog"/> <t t-esc="page_data.padej"/></h1></div>
+                                    <div id="page-slider-wrap" class="hid-overflow">
+                                        <div id="page-slider" class="col-md-12">
+
+                                            <t t-foreach="page_data.banner_id.banner_item_ids" t-as="banner">
+                                                <div class="slide">
+                                                    <!--<img src="/vip_stamp_slider/static/images/slider1.jpg" class="slider-img" />-->
+                                                    <!--<span itemprop="image" t-field="banner.image" t-field-options='{"widget": "image", "class": "product_detail_img slider-img", "alt-field": "name"}'/>-->
+                                                    <img t-attf-src="data:image/jpg;base64,{{ banner.image }}"  class="slider-img" />
+                                                    <div class="slide-text">
+                                                        <div class="slide-text-header"><t t-esc="banner.name"/></div>
+                                                        <div class="slide-text-body"><t t-raw="banner.text"/></div>
+                                                    </div>
+                                                </div>
+                                            </t>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="page-main-text">
+                                    <h3><t t-esc="page_data.sub_header_text"/></h3>
+                                    <h4><t t-esc="page_data.lvl3_header_text"/></h4>
+                                </div>
+                                <p><t t-raw="page_data.main_text"/></p>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div>
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-center mt16 mb32 text-section-head">
+                                        <span>Заказать печати</span>
+                                    </div>
+
+                                    <t t-foreach="rstamp_group" t-as="product">
+                                        <div class="col-md-4">
+                                            <!--<t t-esc="product['name']" />-->
+                                            <div class="col-md-1"></div>
+
+                                            <div class="col-md-10">
+                                                <div class="panel panel-goods panel-goods-green">
+                                                    <div class="panel-body text-center text-muted">
+                                                        <div class="div-image-goods">
+                                                            <!--<img src="/website/static/src/img/library/vegetables.png" />-->
+                                                            <t t-set="defprod" t-value="product['product']"></t>
+                                                            <span itemprop="image" t-field="defprod.image" t-field-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name"}'/>
+                                                            <div class="name-product"><span class="header-name-product"><t t-esc="product['name']"/></span><a class="no-decore" t-att-href="product['product_link']"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></div>
+                                                        </div>
+
+                                                    </div>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item-goods list-group-item-goods-price list-select"><span class="list-group-item-goods-price-value "><t t-esc="product['price']"/></span> <i> руб.</i></li>
+                                                        <li class="list-group-item-goods"><B>Оснатска:</B><t t-esc="product['equipment']"/></li>
+                                                        <li class="list-group-item-goods"><B>Штемпельная подушка:</B> <t t-esc="product['cushion']"/></li>
+                                                    </ul>
+                                                    <div class="panel-footer text-center">
+                                                        <a class="btn btn-primary btn-lg btn-color btn-color-ordering"  t-att-href="product['product_link']"> Заказать</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1"></div>
+
+                                        </div>
+
+                                    </t>
+
+                                    <div class="col-md-12 text-center mt16 mb32 text-section-head">
+                                        <span>Заказать штымпы на ручной оснастке</span>
+                                    </div>
+
+                                    <t t-foreach="sqstamp_man_group" t-as="product">
+                                        <div class="col-md-4">
+                                            <!--<t t-esc="product['name']" />-->
+                                            <div class="col-md-1"></div>
+
+                                            <div class="col-md-10">
+                                                <div class="panel panel-goods panel-goods-green">
+                                                    <div class="panel-body text-center text-muted">
+                                                        <div class="div-image-goods">
+                                                            <!--<img src="/website/static/src/img/library/vegetables.png" />-->
+                                                            <t t-set="defprod" t-value="product['product']"></t>
+                                                            <span itemprop="image" t-field="defprod.image" t-field-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name"}'/>
+                                                            <div class="name-product"><span class="header-name-product"><t t-esc="product['name']"/></span><a class="no-decore" t-att-href="product['product_link']"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></div>
+                                                        </div>
+
+                                                    </div>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item-goods list-group-item-goods-price list-select"><span class="list-group-item-goods-price-value "><t t-esc="product['price']"/></span> <i> руб.</i></li>
+                                                        <li class="list-group-item-goods"><B>Оснатска:</B><t t-esc="product['equipment']"/></li>
+                                                        <li class="list-group-item-goods"><B>Штемпельная подушка:</B> <t t-esc="product['cushion']"/></li>
+                                                    </ul>
+                                                    <div class="panel-footer text-center">
+                                                        <a class="btn btn-primary btn-lg btn-color btn-color-ordering"  t-att-href="product['product_link']"> Заказать</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1"></div>
+
+                                        </div>
+
+                                    </t>
+
+
+                                    <div class="col-md-12 text-center mt16 mb32 text-section-head">
+                                        <span>Заказать штампы на автоматической оснастке</span>
+                                    </div>
+
+                                    <t t-foreach="sqstamp_auto_group" t-as="product">
+                                        <div class="col-md-4">
+                                            <!--<t t-esc="product['name']" />-->
+                                            <div class="col-md-1"></div>
+
+                                            <div class="col-md-10">
+                                                <div class="panel panel-goods panel-goods-green">
+                                                    <div class="panel-body text-center text-muted">
+                                                        <div class="div-image-goods">
+                                                            <!--<img src="/website/static/src/img/library/vegetables.png" />-->
+                                                            <t t-set="defprod" t-value="product['product']"></t>
+                                                            <span itemprop="image" t-field="defprod.image" t-field-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name"}'/>
+                                                            <div class="name-product"><span class="header-name-product"><t t-esc="product['name']"/></span><a class="no-decore" t-att-href="product['product_link']"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></div>
+                                                        </div>
+
+                                                    </div>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item-goods list-group-item-goods-price list-select"><span class="list-group-item-goods-price-value "><t t-esc="product['price']"/></span> <i> руб.</i></li>
+                                                        <li class="list-group-item-goods"><B>Оснатска:</B><t t-esc="product['equipment']"/></li>
+                                                        <li class="list-group-item-goods"><B>Штемпельная подушка:</B> <t t-esc="product['cushion']"/></li>
+                                                    </ul>
+                                                    <div class="panel-footer text-center">
+                                                        <a class="btn btn-primary btn-lg btn-color btn-color-ordering"  t-att-href="product['product_link']"> Заказать</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1"></div>
+
+                                        </div>
+
+                                    </t>
+
+                                    <div class="col-md-12 text-center mt16 mb32 text-section-head">
+                                        <span>Заказать факсимиле</span>
+                                    </div>
+
+                                    <t t-foreach="faximile_group" t-as="product">
+                                        <div class="col-md-4">
+                                            <!--<t t-esc="product['name']" />-->
+                                            <div class="col-md-1"></div>
+
+                                            <div class="col-md-10">
+                                                <div class="panel panel-goods panel-goods-green">
+                                                    <div class="panel-body text-center text-muted">
+                                                        <div class="div-image-goods">
+                                                            <!--<img src="/website/static/src/img/library/vegetables.png" />-->
+                                                            <t t-set="defprod" t-value="product['product']"></t>
+                                                            <span itemprop="image" t-field="defprod.image" t-field-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name"}'/>
+                                                            <div class="name-product"><span class="header-name-product"><t t-esc="product['name']"/></span><a class="no-decore" t-att-href="product['product_link']"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></div>
+                                                        </div>
+
+                                                    </div>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item-goods list-group-item-goods-price list-select"><span class="list-group-item-goods-price-value "><t t-esc="product['price']"/></span> <i> руб.</i></li>
+                                                        <li class="list-group-item-goods"><B>Оснатска:</B><t t-esc="product['equipment']"/></li>
+                                                        <li class="list-group-item-goods"><B>Штемпельная подушка:</B> <t t-esc="product['cushion']"/></li>
+                                                    </ul>
+                                                    <div class="panel-footer text-center">
+                                                        <a class="btn btn-primary btn-lg btn-color btn-color-ordering"  t-att-href="product['product_link']"> Заказать</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1"></div>
+
+                                        </div>
+
+                                    </t>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                </div>
+                <t t-call="vips_shop.our_preference"/>
+            </t>
+
+
+        </template>
+
+        <template id="our_preference">
+            <div class="container">
+                <div class="row">
+                    <p class="header-why-vips">Почему мы - лучший выбор</p>
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-2">
+                        <div class="center-block color-dark-green"><span class="fa fa-check fa-5x" aria-hidden="true"></span></div>
+                        <div class="center-block our-preference-text color-dark-green">Более 100 тысяч оттисков за всё время работы</div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <div class="center-block color-dark-green"><span class="fa fa-calendar fa-5x" aria-hidden="true"></span></div>
+                        <div class="center-block our-preference-text color-dark-green">8 лет на рынке</div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <div class="center-block color-dark-green"><span class="fa fa-users fa-5x" aria-hidden="true"></span></div>
+                        <div class="center-block our-preference-text color-dark-green">Мы обслуживаем почти 40 станций метро</div>
+                    </div>
+
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-2">
+                        <div class="center-block color-dark-green"><span class="fa fa-truck fa-5x" aria-hidden="true"></span></div>
+                        <div class="center-block our-preference-text color-dark-green">3 варианта доставки</div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <div class="center-block color-dark-green"><span class="fa fa-cogs fa-5x" aria-hidden="true"></span></div>
+                        <div class="center-block our-preference-text color-dark-green">2 технологии производства печатей</div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <div class="center-block color-dark-green"><span class="fa fa-sun-o fa-5x" aria-hidden="true"></span></div>
+                        <div class="center-block our-preference-text color-dark-green">Производство гербовых печатей</div>
+                    </div>
+
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </template>
 
         <!-- <template id="listing"> -->
         <!--   <ul> -->

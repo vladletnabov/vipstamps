@@ -31,6 +31,7 @@
         'views/delivery.xml',
         'views/sale_order.xml',
         'views/vips_vc.xml',
+        'views/silkworm_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

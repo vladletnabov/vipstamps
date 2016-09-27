@@ -15,6 +15,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
+
 class vip_stamp_web_shop(website_sale):
 
     @http.route()
@@ -328,6 +329,9 @@ class vip_stamp_web_shop(website_sale):
                 order_info.update(fiscal_update)
 
         order_info.pop('user_id')
+        sale_persone = self.get_default_sale_person()
+        if (sale_persone!=None):
+            order_info['user_id'] = sale_persone
         if (checkout.get('shipping_id')==-2):
             order_info.update(partner_shipping_id=0 or partner_id)
         else:
@@ -335,6 +339,18 @@ class vip_stamp_web_shop(website_sale):
 
         order_obj.write(cr, SUPERUSER_ID, [order.id], order_info, context=context)
 
+    def get_default_sale_person(self):
+        cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
+
+        orm_salepersone = registry.get('vips_shop.salepersone')
+        result = None
+
+        ids = orm_salepersone.search(cr, SUPERUSER_ID, [], context=context)
+
+        if(len(ids)>0):
+            result = orm_salepersone.browse(cr, SUPERUSER_ID, ids, context)[0].name.id
+
+        return result
 
     def write_shipping_info(self, *post):
         cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
@@ -588,3 +604,99 @@ class vip_stamp_web_shop(website_sale):
 #         return http.request.render('vips_shop.object', {
 #             'object': obj
 #         })
+
+class vips_salepage(http.Controller):
+
+    @http.route('/salepage/<page>', type='http', auth="public", website=True)
+    def page(self, page, **kw):
+        cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
+        _logger.error("||->|| page: %r", page)
+        page_data = self.get_filial_page(page)
+        fp_product = self.get_fp_product()
+        rstamp_group = self.get_product_group(fp_product.rstamp_ids)
+        sqstamp_man_group = self.get_product_group(fp_product.sqstamp_man_ids)
+        sqstamp_auto_group = self.get_product_group(fp_product.sqstamp_auto_ids)
+        faximile_group = self.get_product_group(fp_product.faximile_ids)
+
+        if page_data==None:
+            #pageUrl = 'website.page_404'
+            #return request.render(pageUrl, {'path': page,})
+            return request.registry['ir.http']._handle_exception('Страница не найдена', 404)
+
+        return http.request.render('vips_shop.indexpage2', {
+            'page_data': page_data,
+            'rstamp_group': rstamp_group,
+            'sqstamp_man_group': sqstamp_man_group,
+            'sqstamp_auto_group': sqstamp_auto_group,
+            'faximile_group': faximile_group,
+        })
+
+    def get_fp_product(self):
+        cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
+        result = None
+        orm_fp_product = registry.get('vips_shop.fp_product')
+        orm_fp_product_param = registry.get('vips_shop.fp_product_param')
+        orm_fp_product_group = registry.get('vips_shop.fp_product_group')
+
+        fp_product_ids = orm_fp_product.search(cr, SUPERUSER_ID, [['active', '=', True],], context=context)
+        #_logger.error(fp_product_ids)
+        len_fp_product_result = len(orm_fp_product.browse(cr, SUPERUSER_ID, fp_product_ids, context))
+        #_logger.error("len arr:%r", len_fp_product_result)
+        if (len_fp_product_result <1):
+            return result
+        else:
+            result = orm_fp_product.browse(cr, SUPERUSER_ID,fp_product_ids,  context=context)[0]
+            _logger.error("<<||>> fp_products ID: %r", result.id)
+            _logger.error("<<||>> fp_products name: %r", result.name)
+        return result
+
+    def get_product_group(self, group_id):
+        cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
+        orm_fp_product_group = registry.get('vips_shop.fp_product_group')
+        _logger.error("group_id: %r", group_id)
+        result = []
+        product_param_ids = group_id.fp_product_param_id
+        _logger.error("product_param_ids: %r", product_param_ids)
+        for product_param in product_param_ids:
+            _logger.error("====> product_param: %r", product_param.id)
+            cushion = {'yes': 'встроена','no': 'нет'}
+            equipment = {'manual': 'ручная с гербом', 'auto': 'автоматическая', 'mobile': 'карманная'}
+            product = {
+                'name': product_param.name,
+                'cushion': cushion[product_param.cushion],
+                'equipment': equipment[product_param.equipment],
+                'product_id': product_param.product_id.id,
+                'price': product_param.product_id.list_price,
+                'product': product_param.product_id,
+                'product_link': ('/shop/product/' + str(product_param.product_id.id))
+            }
+            result.append(product)
+
+        return result
+
+    def get_filial_page(self, url):
+        cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
+        orm_fp = registry.get('vips_shop.filial_page')
+        fp_ids = orm_fp.search(cr, SUPERUSER_ID, [['url_name', '=', url],], context=context)
+        count_pages = len(orm_fp.browse(cr, SUPERUSER_ID, fp_ids, context))
+        if count_pages==0:
+            #page = 'website.page_404'
+            #return request.render(page, {'path': url,})
+            return None
+
+        page = orm_fp.browse(cr, SUPERUSER_ID, fp_ids, context)[0]
+        _logger.error("||->|| page URL: %r recived URL: %r", page.url_name, url)
+        return page
+
+    '''def get_all_filial_pages(self):
+        cr, uid, context, registry = request.cr, request.uid, request.context, request.registry
+        orm_fp = registry.get('vips_shop.filial_page')
+        fp_ids = orm_fp.search(cr, SUPERUSER_ID, [], context=context)
+        count_pages = len(orm_fp.browse(cr, SUPERUSER_ID, fp_ids, context))
+        if count_pages==0:
+            #page = 'website.page_404'
+            #return request.render(page, {'path': url,})
+            return None
+
+        pages = orm_fp.browse(cr, SUPERUSER_ID, fp_ids, context)
+        return pages'''

@@ -3,8 +3,7 @@ $(document).ready(function(e) {
     function init () {
         var myMap = new ymaps.Map("mapid", {
                 center: [55.775, 37.532],
-                zoom: 15,
-		controls: []
+                zoom: 15
             }, {
                 searchControlProvider: 'yandex#search'
             }),
@@ -28,7 +27,7 @@ $(document).ready(function(e) {
                     }
                 }
             );
-	
+
         var myPlacemark = new ymaps.Placemark([55.774872, 37.531442], {
             address: "Москва, Хорошёвское шоссе, 13А, к.2",
             object: "Офис VIP-Штампы на Беговой"
