@@ -480,6 +480,7 @@
                     <sheet>
                         <group>
                             <field name="name" string="Наименование"/>
+                            <field name="region" string="Регион"/>
                             <field name="url_name" string="ЧПУ наименование страницы"/>
                             <field name="predlog" string="Предлог"/>
                             <field name="padej" string="Название в падеже"/>
@@ -496,7 +497,10 @@
                                 <field name="main_text" string="Основной текст страницы"/>
                             </page>
                             <page string="Баннер">
-                                <field name="banner_id" string="Баннер страницы"/>
+                                <group>
+                                    <field name="main_slide_id" string="Главный слайд"/>
+                                    <field name="banner_id" string="Баннер страницы"/>
+                                </group>
                             </page>
                         </notebook>
                     </sheet>

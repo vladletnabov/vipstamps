@@ -54,7 +54,7 @@
                                     </ul>-->
                                     <ul class="dropdown-menu dropdown-poi-office" aria-labelledby="select-poi-office">
                                         <t t-foreach="filial_list" t-as="filial">
-                                            <li><a t-attf-href="/salepage/#{ filial.url_name }">Москва, <t t-esc="filial.name"/></a></li>
+                                            <li><a t-attf-href="/salepage/#{ filial.url_name }"><t t-esc="website.convert_name_from_eng_to_rus(filial.region)"/>, <t t-esc="filial.name"/></a></li>
                                         </t>
                                     </ul>
                                 </div>

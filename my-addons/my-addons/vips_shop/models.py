@@ -102,6 +102,7 @@ class fp_product_group(models.Model):
 class filial_page(models.Model):
     _name = 'vips_shop.filial_page'
     name = fields.Char()
+    region = fields.Selection([('Moscow', 'Москва'),('MO','МО')])
     predlog = fields.Char()
     padej = fields.Char()
     url_name = fields.Char(required=True)
@@ -110,6 +111,7 @@ class filial_page(models.Model):
     sub_header_text = fields.Char()
     lvl3_header_text = fields.Char()
     main_text = fields.Html()
+    main_slide_id = fields.Many2one('vips_shop.banner_item',  string='Главный слайд филиала', index=True)
     banner_id = fields.Many2one('vips_shop.filial_banner',  string='Баннер', index=True)
 
     _sql_constraints = [
@@ -126,6 +128,7 @@ class filial_banner(models.Model):
     filial_page_ids = fields.One2many('vips_shop.filial_page', 'banner_id',  string='Штампы на автомате', index=True)
     banner_item_ids = fields.Many2many('vips_shop.banner_item',  'vips_banner_item_rel', 'banner_item_ids', 'filail_baner_ids',string='Связанные банер', index=True)
 
+
 class banner_item(models.Model):
     _name = 'vips_shop.banner_item'
 
@@ -133,7 +136,7 @@ class banner_item(models.Model):
     text = fields.Char()
     image = fields.Binary()
     filail_baner_ids = fields.Many2many('vips_shop.filial_banner',  'vips_banner_item_rel', 'banner_item_ids', 'filail_baner_ids',string='Связанные банер', index=True)
-
+    filial_page_slide_ids = fields.One2many('vips_shop.filial_page', 'main_slide_id',  string='Филиал слайда', index=True)
 
 
 
@@ -182,3 +185,16 @@ class website(models.Model):
 
         pages = orm_fp.browse(cr, SUPERUSER_ID, fp_ids, context)
         return pages
+
+    def convert_name_from_eng_to_rus(self, name):
+        result = name
+        baseDict = {
+            'Moscow':'Москва',
+            'MO':'МО'
+        }
+        try:
+            result = baseDict[name]
+        except ValueError:
+            print('No value in baseDict')
+            result = name
+        return result

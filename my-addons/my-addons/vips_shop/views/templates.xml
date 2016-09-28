@@ -485,6 +485,18 @@
                                     <div id="page-slider-wrap" class="hid-overflow">
                                         <div id="page-slider" class="col-md-12">
 
+                                            <t t-if="page_data.main_slide_id">
+                                                <div class="slide">
+                                                    <!--<img src="/vip_stamp_slider/static/images/slider1.jpg" class="slider-img" />-->
+                                                    <!--<span itemprop="image" t-field="banner.image" t-field-options='{"widget": "image", "class": "product_detail_img slider-img", "alt-field": "name"}'/>-->
+                                                    <img t-attf-src="data:image/jpg;base64,{{ page_data.main_slide_id.image }}"  class="slider-img" />
+                                                    <div class="slide-text">
+                                                        <div class="slide-text-header"><t t-esc="page_data.main_slide_id.name"/></div>
+                                                        <div class="slide-text-body"><t t-raw="page_data.main_slide_id.text"/></div>
+                                                    </div>
+                                                </div>
+                                            </t>
+
                                             <t t-foreach="page_data.banner_id.banner_item_ids" t-as="banner">
                                                 <div class="slide">
                                                     <!--<img src="/vip_stamp_slider/static/images/slider1.jpg" class="slider-img" />-->
