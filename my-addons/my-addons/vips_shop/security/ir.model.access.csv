@@ -3,4 +3,11 @@ access_vips_shop_metro,vips_shop.metro,model_vips_shop_metro,,1,1,1,1
 access_vips_shop_delivery,vips_shop.delivery,model_vips_shop_delivery,,1,1,1,1
 access_vips_shop_color,vips_shop.color,model_vips_shop_color,,1,1,1,1
 access_vips_shop_quick_sale_order,vips_shop.quick_sale_order,model_vips_shop_quick_sale_order,,1,1,1,1
+access_vips_shop_banner_item,vips_shop.banner_item,model_vips_shop_banner_item,,1,1,1,1
+access_vips_shop_filial_banner,vips_shop.filial_banner,model_vips_shop_filial_banner,,1,1,1,1
+access_vips_shop_filial_page,vips_shop.filial_page,model_vips_shop_filial_page,,1,1,1,1
+access_vips_shop_fp_product,vips_shop.fp_product,model_vips_shop_fp_product,,1,1,1,1
+access_vips_shop_fp_product_group,vips_shop.fp_product_group,model_vips_shop_fp_product_group,,1,1,1,1
+access_vips_shop_fp_product_param,vips_shop.fp_product_param,model_vips_shop_fp_product_param,,1,1,1,1
+access_vips_shop_salepersone,vips_shop.salepersone,model_vips_shop_salepersone,,1,1,1,1
 
