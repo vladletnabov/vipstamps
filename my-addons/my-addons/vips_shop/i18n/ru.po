@@ -143,6 +143,8 @@ msgstr "Выбрать Имя"
 #: view:website:website_sale.checkout
 msgid "City"
 msgstr "Город"
+msgid "submit_txt"
+msgstr "Оформить заказ"
 
 #. module: website_sale
 #. openerp-web

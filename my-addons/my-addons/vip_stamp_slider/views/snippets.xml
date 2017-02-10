@@ -28,16 +28,16 @@
                             <div id="slider-wrap" class="row">
                                 <div id="slider" class="col-md-12">
                                     <div class="slide">
-                                        <img src="vip_stamp_slider/static/images/slider1.jpg" class="slider-img" />
+                                        <img src="/vip_stamp_slider/static/images/slider1.jpg" class="slider-img slide-main" />
                                     </div>
                                     <div class="slide">
-                                        <img src="/vip_stamp_slider/static/images/slider2.jpg" class="slider-img" />
+                                        <img src="/vip_stamp_slider/static/images/slider2.jpg" class="slider-img slide-main" />
                                     </div>
                                     <div class="slide">
-                                        <img src="/vip_stamp_slider/static/images/slider3.jpg" class="slider-img" />
+                                        <img src="/vip_stamp_slider/static/images/slider3.jpg" class="slider-img slide-main" />
                                     </div>
                                     <div class="slide">
-                                        <img src="/vip_stamp_slider/static/images/slider4.jpg" class="slider-img" />
+                                        <img src="/vip_stamp_slider/static/images/slider4.jpg" class="slider-img slide-main" />
                                     </div>
                                 </div>
                             </div>
@@ -53,23 +53,27 @@
                                         <div class="col-md-3 header-image-text-block bottom-block header-image-text-block-1">
                                             <p class="header-image-text-block-header">Уникальная база печатей</p>
 
-                                            <p>Мы ведём реестр печатей, а также штампов и факсимиле когда либо-изготовленных в нашей компании. И поэтому мы всегда оперативно изготовим для Вас дубликаты печатей, которые Вам необходимы именно сейчас.</p>
-					    <p>Да и получить такой заказ можно почти сразу... уже через несколько минут!</p>
+                                            <p>Мы ведём реестр всех печатей и
+                                                штампов когда либо произведённых
+                                                в нашей компании</p>
+                                            <p>По этому восстановить или закзать
+                                                повторную печать  у нас проще чем сходить в магазин за хлебом.
+                                                И быстрее</p>
                                         </div>
                                         <div class="col-md-1"></div>
                                         <div class="col-md-3 header-image-text-block bottom-block header-image-text-block-2">
                                             <p class="header-image-text-block-header">Две технологии</p>
 
-                                            <p>Мы производим печати как из резины, так и из полимера.</p>
-					    <p>Печати и штампы из резины имеют большой срок службы, подходят для частого использования и имеют более чёткие оттиски.</p>
-					    <p>Печати из полимера имеют более демократичную цену и подходят для разового или не очень частого использования.</p>
+                                            <p>Мы производим печати из резины  и фотополимера.</p>
+                                            <p>Печати и штампы из резины более долговечные, из них делаею гербовые печати и печати с защитой.</p>
+                                            <p>Печати из фотополимера имеют более демократичную цену и приемлемы срок службы до двух лет</p>
                                         </div>
                                         <div class="col-md-1"></div>
                                         <div class="col-md-3 header-image-text-block bottom-block header-image-text-block-3">
-                                            <p class="header-image-text-block-header">Самовывоз и доставка</p>
+                                            <p class="header-image-text-block-header">Пункты выдачи</p>
 
-                                            <p>Вы можете получить готовые заказы в одном из офисов компании или заказать доставку по адресу или бесплатную доставку до любой станции метро.</p>
-					    <p>Последняя новость: теперь Вы можете получить печать в городе Красногорске и его окрестностях!!!</p>
+                                            <p>У нас большое количество пунктов выдачи товара по Москве, а так же Красногорску.</p>
+                                            <p>При желании вы можете заказать доставку курьером</p>
 
                                         </div>
                                     </div>
@@ -77,96 +81,71 @@
                             </div>
                             <div class="form-text-image-block">
                                 <div class="container">
-                                    <!--<form name="quick_sale_order" action="/vips_shop/quick_order" method="get">-->
-                                    <form name="quick_sale_order" action="" method="get">
-                                    <div class="row">
-                                        <div class="col-md-2"></div>
-                                        <t t-set="product_data" t-value="website.get_quick_product()"/>
-                                        <div class="col-md-3">
-                                                <div class="dropdown header-slider-send-form-element quick-saleorder-1">
+                                    <form name="quick_sale_order" action="/vips_shop/quick_order" method="get">
 
-                                                        <select name="product_id" id="select-product">
+                                        <div class="row">
+                                            <div class="col-md-2"></div>
+                                            <t t-set="product_data" t-value="website.get_quick_product()"/>
+                                            <div class="col-md-3">
+                                                    <div class="dropdown header-slider-send-form-element">
 
-                                                            <option value="-1" disabled="true" selected="true">Выберите продукт</option>
-                                                            <t t-foreach="product_data" t-as="product">
-                                                                  <option t-att-value="product.product_id.id" ><t t-esc="product.name" /></option>
+                                                            <select name="product_id" id="select-product">
+                                                                <option value="-1" disabled="true" selected="true">Выберите продукт</option>
+                                                                <t t-foreach="product_data" t-as="product">
+                                                                      <option t-att-value="product.product_id.id" ><t t-esc="product.name" /></option>
+                                                                </t>
+                                                            </select>
+                                                    </div>
+
+
+                                            </div>
+                                            <div class="col-md-1"></div>
+
+                                            <t t-set="delivery_data" t-value="website.get_vips_delivery()"/>
+                                            <div class="col-md-3">
+                                                <div class="dropdown header-slider-send-form-element">
+                                                    <select name="shipping_id" id="select-shipping">
+                                                        <option value="" disabled="true" selected="true" style="color:red;">Выберите способ доставки</option>
+                                                            <t t-foreach="delivery_data" t-as="delivery">
+                                                                 <option t-att-value="delivery.id" ><t t-esc="delivery.prefix_address" /></option>
                                                             </t>
-                                                        </select>
-
+                                                    </select>
                                                 </div>
 
 
-                                        </div>
-                                        <div class="col-md-1 height15px"></div>
-
-                                        <t t-set="delivery_data" t-value="website.get_vips_delivery()"/>
-                                        <div class="col-md-3">
-                                            <div class="dropdown header-slider-send-form-element quick-saleorder-2">
-                                                <!--<label id="select-shipping" type="text" placeholder="Выберите  способ доставки"
-                                                       class="dropdown-toggle" data-toggle="dropdown"
-                                                       style="position:relative; left: 0px;"><span>Выберите способ доставки</span></label>
-                                                <ul class="dropdown-menu header-slider-send-form-element-dropdown"
-                                                    aria-labelledby="select-shipping">-->
-                                                <select name="shipping_id" id="select-shipping">
-                                                    <option value="" disabled="true" selected="true" style="color:red;">Выберите способ доставки</option>
-                                                        <t t-foreach="delivery_data" t-as="delivery">
-                                                             <option t-att-value="delivery.id"
-                                                                     t-att-data-delivery_product_name="delivery.product_id.name"
-                                                                     t-att-data-delivery_product_id="delivery.product_id.id">
-                                                                 <t t-esc="delivery.prefix_address" />
-                                                             </option>
-                                                        </t>
-                                                </select>
-                                                    <!--<li><a >Самовывоз из офиса</a></li>
-                                                    <li><a >Доставка до метро</a></li>
-                                                    <li><a >Доставка по адресу</a></li>
-                                                </ul>-->
                                             </div>
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-2"><a id="header-send-form" class="btn btn-field-form ">ЗАКАЗАТЬ</a></div>
+                                            <div class="col-md-1"></div>
+                                        </div>
 
+
+                                        <!-- Modal window
+                                        -->
+                                        <div id="modal_form"><!-- Сaмo oкнo -->
+
+                                            <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
+                                            <!-- Тут любoе сoдержимoе -->
+                                            <div class="header-modal-window"><span>Укажите ваши контактные данные</span></div>
+                                            <div class="modal-div-align">
+                                                <input name="qos_name" id="send-form-name" type="text" placeholder="Ваше имя" class="input-form-fio"/>
+                                                <input name="qos_surname" id="send-form-surname" type="text" placeholder="Ваше фамилия" class="input-form-fio"/></div>
+                                            <div class="modal-div-align">
+                                                <input name="qos_phone" id="send-form-phone" type="text" placeholder="Ваш телефон" class="input-form-fio"/>
+                                                <input name="qos_email" id="send-form-email" type="text" placeholder="Ваш e-mail" class="input-form-fio"/>
+                                            </div>
+                                            <div class="modal-div-align"><textarea name="order_description" id="send-form-text" placeholder="Текст сообщения" class="input-form-text"></textarea></div>
+                                            <div class="modal-btn-align"><a id="modal_send" class="btn btn-color btn-modal-form-right">ОПРАВИТЬ</a></div>
 
                                         </div>
-                                        <div class="col-md-1 height15px"></div>
-                                        <div class="col-md-2 quick-saleorder-3"><a id="header-send-form" class="btn btn-field-form ">ЗАКАЗАТЬ</a></div>
-                                        <div class="col-md-1"></div>
-                                    </div>
-
-
-                                    <!-- Modal window
-                                    -->
-                                    <div id="modal_form"><!-- Сaмo oкнo -->
-
-                                        <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
-                                        <!-- Тут любoе сoдержимoе -->
-                                        <div class="header-modal-window"><span>Укажите ваши контактные данные</span></div>
-                                        <div class="modal-div-align">
-                                            <input name="qos_name" id="send-form-name" type="text" placeholder="Ваше имя" class="input-form-fio"/>
-                                            <input name="qos_surname" id="send-form-surname" type="text" placeholder="Ваше фамилия" class="input-form-fio"/></div>
-                                        <div class="modal-div-align">
-                                            <input name="qos_phone" id="send-form-phone" type="text" placeholder="Ваш телефон" class="input-form-fio"/>
-                                            <input name="qos_email" id="send-form-email" type="text" placeholder="Ваш e-mail" class="input-form-fio"/>
-                                        </div>
-                                        <div class="modal-div-align"><textarea name="order_description" id="send-form-text" placeholder="Текст сообщения" class="input-form-text"></textarea></div>
-                                        <div class="modal-btn-align"><a id="modal_send" class="btn btn-color btn-modal-form-right">ОПРАВИТЬ</a></div>
-
-                                    </div>
-                                    <div id="overlay"></div><!-- Пoдлoжкa -->
+                                        <div id="overlay"></div><!-- Пoдлoжкa -->
                                     </form>
-                                    <div id="result_query_modal">
-                                        <span id="modal_close_result_query_modal">X</span> <!-- Кнoпкa зaкрыть -->
-                                        <div class="report_result_query_modal"></div>
-                                        <div class="result_query_modal_btn_pos"><a id="close_result_query_modal" class="btn btn-color btn-color-qw-mdl">ЗАКРЫТЬ</a></div>
-
-                                    </div>
-                                    <div id="overlay_query"></div>
 
                                 </div>
 
                             </div>
-
                         </div>
                     </section>
-
-
                 </div>
             </xpath>
         </template>

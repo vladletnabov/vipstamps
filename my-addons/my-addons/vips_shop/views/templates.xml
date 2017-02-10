@@ -38,11 +38,11 @@
                       <input type="text" name="name" class="form-control" t-att-value="checkout.get('name')"/>
                   </div>
                   <div t-if="has_check_vat" class="clearfix"/>
-                  <div t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-lg-6">
+                  <div t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-lg-6 hidden-block">
                       <label class="control-label" for="street" style="font-weight: normal">Название компании</label>
                       <input type="text" name="street" class="form-control" t-att-value="checkout.get('street')"/>
                   </div>
-                  <div t-if="has_check_vat" t-attf-class="form-group #{error.get('vat') and 'has-error' or ''} col-lg-6">
+                  <div t-if="has_check_vat" t-attf-class="form-group #{error.get('vat') and 'has-error' or ''} col-lg-6 hidden-block">
                       <label class="control-label" for="vat" style="font-weight: normal">ИНН</label>
                       <input type="text" name="vat" class="form-control" t-att-value="checkout.get('vat')"/>
                   </div>
@@ -55,9 +55,9 @@
                       <input type="tel" name="phone" class="form-control" t-att-value="checkout.get('phone')"/>
                   </div>
 
-                  <div t-attf-class="form-group #{error.get('street2') and 'has-error' or ''} col-lg-6">
+                  <div t-attf-class="form-group #{error.get('street2') and 'has-error' or ''} col-lg-6 hidden-block">
                       <label class="control-label" for="street2">Улица, дом, квартира/офис</label>
-                      <input type="text" name="street2" class="form-control" t-att-value="checkout.get('street2')"/>
+                      <input type="text" name="street2" class="form-control" t-att-value="checkout.get('street2') or 'nonstreet'"/>
                   </div>
 
                   <div t-attf-class="form-group #{error.get('metro_stations') and 'has-error' or ''} col-lg-6">
@@ -78,11 +78,11 @@
                       <label class="control-label" for="city">Город</label>
                       <input type="text" name="city" class="form-control" t-att-value="checkout.get('city')"/>
                   </div>
-                  <div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-lg-6">
+                  <div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-lg-6 hidden-block">
                       <label class="control-label" for="zip" style="font-weight: normal">Почтовый индекс</label>
                       <input type="text" name="zip" class="form-control" t-att-value="checkout.get('zip')"/>
                   </div>
-                  <div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''} col-lg-6">
+                  <div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''} col-lg-6 hidden-block">
                       <label class="control-label" for="country_id">Страна</label>
                       <select name="country_id" class="form-control">
                           <option value="">Страна...</option>
@@ -92,7 +92,7 @@
                           </t>
                       </select>
                   </div>
-                  <div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-lg-6">
+                  <div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-lg-6 hidden-block">
                       <label class="control-label" for="state_id" style="font-weight: normal">Область, штат</label>
                       <select name="state_id" class="form-control">
                           <option value="">Выберите...</option>
@@ -265,17 +265,17 @@
 </template>
 <template id="payment">
   <t t-call="website.layout">
-      <t t-set="additional_title">Shop - Select Payment Mode</t>
+      <t t-set="additional_title">Оформление заказа - подтверждение</t>
       <div id="wrap">
         <div class="container oe_website_sale">
 
           <ul class="wizard pull-right">
-              <li><a href="/shop/cart" class="text-success">Review Order<span class="chevron"></span></a></li>
-              <li><a href="/shop/checkout" class="text-success">Shipping &amp; Billing<span class="chevron"></span></a></li>
-              <li class="text-primary">Payment<span class="chevron"></span></li>
-              <li class="text-muted">Confirmation<span class="chevron"></span></li>
+              <li><a href="/shop/cart" class="text-success">Просмотреть заказ<span class="chevron"></span></a></li>
+              <li><a href="/shop/checkout" class="text-success">Доставка &amp; Оплата<span class="chevron"></span></a></li>
+              <li class="text-primary">Стоимость<span class="chevron"></span></li>
+              <li class="text-muted">Подтверждение<span class="chevron"></span></li>
           </ul>
-          <h1 class="mb32">Validate Order</h1>
+          <h1 class="mb32">Подтвердить заказ</h1>
           <div class="row">
           <div class="col-lg-8 col-sm-9">
               <t t-foreach="errors" t-as="error">
@@ -325,16 +325,16 @@
               <div class="oe_structure"/>
             </div>
             <div class="col-lg-3 col-lg-offset-1 col-sm-3 text-muted" id="right_column">
-                <h4>Bill To:</h4>
+                <h4>Заказан:</h4>
                 <div t-field="order.partner_invoice_id" t-field-options='{
                     "widget": "contact",
                     "fields": ["address", "name", "phone", "email"]
                     }'/>
                 <div>
-                  <a href="/shop/checkout"><span class="fa fa-arrow-right"/> Change Address</a>
+                  <a href="/shop/checkout"><span class="fa fa-arrow-right"/> Изменить адрес</a>
                 </div>
                 <t>
-                    <h4 class="mt32">Ship To:</h4>
+                    <h4 class="mt32">Доставка:</h4>
                     <t t-if="website_sale_order.partner_shipping_id and website_sale_order.partner_shipping_id.id != website_sale_order.partner_invoice_id.id">
                       <div t-field="order.partner_shipping_id" t-field-options='{
                         "widget": "contact",
@@ -343,15 +343,15 @@
                     </t>
                     <address t-if="website_sale_order.partner_shipping_id.id == website_sale_order.partner_invoice_id.id">Ship to the same address</address>
                     <div class="mb32">
-                      <a href="/shop/checkout"><span class="fa fa-arrow-right"/> Change Address</a>
+                      <a href="/shop/checkout"><span class="fa fa-arrow-right"/> Изменить адрес</a>
                     </div>
                 </t>
             </div>
           </div>
 
-          <div class="js_payment mb64 row" t-if="acquirers and website_sale_order.amount_total" id="payment_method">
+          <div class="js_payment mb64 row " t-if="acquirers and website_sale_order.amount_total" id="payment_method">
               <div class="col-lg-5 col-sm-6">
-                  <h4>Payment Method:</h4>
+                  <h4>Варианты оплаты:</h4>
                   <ul class="list-unstyled">
                     <li t-foreach="acquirers or []" t-as="acquirer">
                       <label t-if="acquirer.button">
@@ -368,7 +368,7 @@
                   <t t-foreach="acquirers or []" t-as="acquirer">
                       <div t-att-data-id="acquirer.id" class="oe_sale_acquirer_button hidden pull-right">
                         <div t-raw="acquirer.button"/>
-                        <div t-field="acquirer.pre_msg"/>
+                        <!--<div t-field="acquirer.pre_msg"/>-->
                       </div>
                   </t>
               </div>
@@ -377,7 +377,7 @@
             <div class="col-lg-8 col-sm-8">
               <form target="_self" action="/shop/payment/validate" method="post" class="pull-right">
                   <a style="width:100px;" class="btn btn-primary a-submit">
-                    <span>Pay Now <span class="fa fa-long-arrow-right"></span></span>
+                    <span>Оформить заказ <span class="fa fa-long-arrow-right"></span></span>
                   </a>
               </form>
             </div>

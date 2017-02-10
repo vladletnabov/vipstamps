@@ -25,8 +25,73 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.5769231">
               <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.666667">
+              <caret line="563" column="88" selection-start-line="563" selection-start-column="88" selection-end-line="563" selection-end-column="88" />
+              <folding>
+                <element signature="e#559#920#0" expanded="false" />
+                <element signature="e#9241#10225#0" expanded="false" />
+                <element signature="e#10279#11477#0" expanded="false" />
+                <element signature="e#11531#15187#0" expanded="false" />
+                <element signature="e#15236#15622#0" expanded="false" />
+                <element signature="e#15674#19581#0" expanded="false" />
+                <element signature="e#19641#22136#0" expanded="false" />
+                <element signature="e#25424#29251#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__openerp__.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/__openerp__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3986014">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="templates.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.980769">
+              <caret line="369" column="51" selection-start-line="369" selection-start-column="36" selection-end-line="369" selection-end-column="51" />
+              <folding>
+                <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ru.po" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/i18n/ru.po">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="146" column="22" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/src/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-26.125">
+              <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -35,17 +100,17 @@
       <file leaf-file-name="vips_vc.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/vips_vc.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3333333">
+            <state vertical-scroll-proportion="0.0">
               <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ir.model.access.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ir.model.access.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/security/ir.model.access.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47368422">
+            <state vertical-scroll-proportion="0.0">
               <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
@@ -70,22 +135,22 @@
         <option value="$PROJECT_DIR$/views/vips_vc.xml" />
         <option value="$PROJECT_DIR$/views/sale_order.xml" />
         <option value="$PROJECT_DIR$/i18n/ru.ro" />
-        <option value="$PROJECT_DIR$/i18n/ru.po" />
         <option value="$PROJECT_DIR$/partner.py" />
         <option value="$PROJECT_DIR$/user.py" />
         <option value="$PROJECT_DIR$/users.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="$PROJECT_DIR$/__openerp__.py" />
         <option value="$PROJECT_DIR$/sale_order.py" />
         <option value="$PROJECT_DIR$/views/silkworm_view.xml" />
         <option value="$PROJECT_DIR$/product.py" />
         <option value="$PROJECT_DIR$/static/src/js/website_sale_ext.js" />
-        <option value="$PROJECT_DIR$/static/src/css/style.css" />
-        <option value="$PROJECT_DIR$/controllers.py" />
         <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/views/viewmenu.xml" />
-        <option value="$PROJECT_DIR$/views/templates.xml" />
         <option value="$PROJECT_DIR$/security/ir.model.access.csv" />
+        <option value="$PROJECT_DIR$/static/src/css/style.css" />
+        <option value="$PROJECT_DIR$/views/templates.xml" />
+        <option value="$PROJECT_DIR$/i18n/ru.po" />
+        <option value="$PROJECT_DIR$/controllers.py" />
+        <option value="$PROJECT_DIR$/__openerp__.py" />
       </list>
     </option>
   </component>
@@ -97,8 +162,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="25" />
-    <option name="width" value="1368" />
-    <option name="height" value="639" />
+    <option name="width" value="1282" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -125,6 +190,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,8 +320,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,12 +543,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1368" height="639" extended-state="6" />
+    <frame x="-1" y="25" width="1282" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22432025" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24313408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22030652" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13023783" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -558,7 +623,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="207" column="67" selection-start-line="207" selection-start-column="67" selection-end-line="207" selection-end-column="67" />
           <folding>
+            <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -619,7 +688,7 @@
             <element signature="e#10279#11477#0" expanded="false" />
             <element signature="e#11531#15187#0" expanded="false" />
             <element signature="e#15236#15622#0" expanded="false" />
-            <element signature="e#19641#22123#0" expanded="false" />
+            <element signature="e#19641#22136#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -647,7 +716,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="83" column="68" selection-start-line="83" selection-start-column="61" selection-end-line="83" selection-end-column="68" />
           <folding>
+            <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -722,7 +795,7 @@
             <element signature="e#10279#11477#0" expanded="false" />
             <element signature="e#11531#15187#0" expanded="false" />
             <element signature="e#15236#15622#0" expanded="false" />
-            <element signature="e#19641#22123#0" expanded="false" />
+            <element signature="e#19641#22136#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -732,7 +805,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="46" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="49" />
           <folding>
+            <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -807,7 +884,7 @@
             <element signature="e#10279#11477#0" expanded="false" />
             <element signature="e#11531#15187#0" expanded="false" />
             <element signature="e#15236#15622#0" expanded="false" />
-            <element signature="e#19641#22123#0" expanded="false" />
+            <element signature="e#19641#22136#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -817,7 +894,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,13 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/i18n/ru.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.01754386">
-          <caret line="110" column="34" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/sale_order.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-26.25">
@@ -916,13 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__openerp__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -948,19 +1015,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24438202">
-          <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15789473">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,52 +1081,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042134833">
-          <caret line="523" column="30" selection-start-line="480" selection-start-column="24" selection-end-line="523" selection-end-column="30" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.039473683">
-          <caret line="615" column="17" selection-start-line="615" selection-start-column="17" selection-end-line="615" selection-end-column="17" />
-          <folding>
-            <element signature="e#24#48#0" expanded="false" />
-            <element signature="e#559#920#0" expanded="false" />
-            <element signature="e#9241#10225#0" expanded="false" />
-            <element signature="e#10279#11477#0" expanded="false" />
-            <element signature="e#11531#15187#0" expanded="false" />
-            <element signature="e#15236#15622#0" expanded="false" />
-            <element signature="e#19641#22123#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/vips_vc.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3333333">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/security/ir.model.access.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47368422">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5769231">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.125">
+          <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i18n/ru.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="146" column="22" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.980769">
+          <caret line="369" column="51" selection-start-line="369" selection-start-column="36" selection-end-line="369" selection-end-column="51" />
+          <folding>
+            <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.666667">
+          <caret line="563" column="88" selection-start-line="563" selection-start-column="88" selection-end-line="563" selection-end-column="88" />
+          <folding>
+            <element signature="e#559#920#0" expanded="false" />
+            <element signature="e#9241#10225#0" expanded="false" />
+            <element signature="e#10279#11477#0" expanded="false" />
+            <element signature="e#11531#15187#0" expanded="false" />
+            <element signature="e#15236#15622#0" expanded="false" />
+            <element signature="e#15674#19581#0" expanded="false" />
+            <element signature="e#19641#22136#0" expanded="false" />
+            <element signature="e#25424#29251#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__openerp__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3986014">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -62,6 +62,4 @@ $(document).ready(function(e) {
             function(){pause = false; rotator();
             });
     rotator();
-
-
 });

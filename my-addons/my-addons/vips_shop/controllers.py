@@ -486,7 +486,7 @@ class vip_stamp_web_shop(website_sale):
         if not values['errors']:
             acquirer_ids = payment_obj.search(cr, SUPERUSER_ID, [('website_published', '=', True), ('company_id', '=', order.company_id.id)], context=context)
             values['acquirers'] = list(payment_obj.browse(cr, uid, acquirer_ids, context=context))
-            render_ctx = dict(context, submit_class='btn btn-primary', submit_txt=_('Pay Now'))
+            render_ctx = dict(context, submit_class='btn btn-primary', submit_txt=_('Завершить оформление'))
             for acquirer in values['acquirers']:
                 acquirer.button = payment_obj.render(
                     cr, SUPERUSER_ID, acquirer.id,
@@ -501,6 +501,67 @@ class vip_stamp_web_shop(website_sale):
         #vips_shop
         return request.website.render("vips_shop.payment", values)
 
+
+    @http.route()
+    def payment_transaction(self, acquirer_id):
+        """ Json method that creates a payment.transaction, used to create a
+        transaction when the user clicks on 'pay now' button. After having
+        created the transaction, the event continues and the user is redirected
+        to the acquirer website.
+
+        :param int acquirer_id: id of a payment.acquirer record. If not set the
+                                user is redirected to the checkout page
+        """
+        cr, uid, context = request.cr, request.uid, request.context
+        payment_obj = request.registry.get('payment.acquirer')
+        transaction_obj = request.registry.get('payment.transaction')
+        order = request.website.sale_get_order(context=context)
+
+        if not order or not order.order_line or acquirer_id is None:
+            return request.redirect("/shop/checkout")
+
+        assert order.partner_id.id != request.website.partner_id.id
+
+        # find an already existing transaction
+        tx = request.website.sale_get_transaction()
+        if tx:
+            tx_id = tx.id
+            if tx.sale_order_id.id != order.id or tx.state in ['error', 'cancel'] or tx.acquirer_id.id != acquirer_id:
+                tx = False
+                tx_id = False
+            elif tx.state == 'draft':  # button cliked but no more info -> rewrite on tx or create a new one ?
+                tx.write(dict(transaction_obj.on_change_partner_id(cr, SUPERUSER_ID, None, order.partner_id.id, context=context).get('values', {}), amount=order.amount_total))
+        if not tx:
+            tx_id = transaction_obj.create(cr, SUPERUSER_ID, {
+                'acquirer_id': acquirer_id,
+                'type': 'form',
+                'amount': order.amount_total,
+                'currency_id': order.pricelist_id.currency_id.id,
+                'partner_id': order.partner_id.id,
+                'partner_country_id': order.partner_id.country_id.id,
+                'reference': request.env['payment.transaction'].get_next_reference(order.name),
+                'sale_order_id': order.id,
+            }, context=context)
+            request.session['sale_transaction_id'] = tx_id
+            tx = transaction_obj.browse(cr, SUPERUSER_ID, tx_id, context=context)
+
+        # update quotation
+        request.registry['sale.order'].write(
+            cr, SUPERUSER_ID, [order.id], {
+                'payment_acquirer_id': acquirer_id,
+                'payment_tx_id': request.session['sale_transaction_id']
+            }, context=context)
+
+        return payment_obj.render(
+            cr, SUPERUSER_ID, tx.acquirer_id.id,
+            tx.reference,
+            order.amount_total,
+            order.pricelist_id.currency_id.id,
+            partner_id=order.partner_shipping_id.id or order.partner_invoice_id.id,
+            tx_values={
+                'return_url': '/shop/payment/validate',
+            },
+            context=dict(context, submit_class='btn btn-primary', submit_txt=_('Оформить')))
 
     #@http.route(['/vips_shop/quick_order'], type='http', auth="public", methods=['GET'], website=True)
     @http.route(['/vips_shop/quick_order'], type='json', auth='public', website=True)
