@@ -61,28 +61,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="templates.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/templates.xml">
+      <file leaf-file-name="viewmenu.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/viewmenu.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.980769">
-              <caret line="369" column="51" selection-start-line="369" selection-start-column="36" selection-end-line="369" selection-end-column="51" />
+            <state vertical-scroll-proportion="-3.125">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-                <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-                <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#0;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#3;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#4;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#7;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#8;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#18;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#19;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#20;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#21;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#22;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#23;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#24;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#25;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#26;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#27;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#28;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#30;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#31;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#record#32;n#data#0;n#openerp#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ru.po" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/i18n/ru.po">
+      <file leaf-file-name="sale_order.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/sale_order.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="146" column="22" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
+            <state vertical-scroll-proportion="-23.625">
+              <caret line="73" column="80" selection-start-line="73" selection-start-column="80" selection-end-line="73" selection-end-column="80" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="templates.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/templates.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="489" column="128" selection-start-line="489" selection-start-column="118" selection-end-line="489" selection-end-column="128" />
+              <folding>
+                <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+                <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,7 +120,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/src/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.125">
+            <state vertical-scroll-proportion="-11.519231">
               <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="13" />
               <folding />
             </state>
@@ -133,7 +163,6 @@
         <option value="$PROJECT_DIR$/views/partner.xml" />
         <option value="$PROJECT_DIR$/vips_vc.py" />
         <option value="$PROJECT_DIR$/views/vips_vc.xml" />
-        <option value="$PROJECT_DIR$/views/sale_order.xml" />
         <option value="$PROJECT_DIR$/i18n/ru.ro" />
         <option value="$PROJECT_DIR$/partner.py" />
         <option value="$PROJECT_DIR$/user.py" />
@@ -144,12 +173,13 @@
         <option value="$PROJECT_DIR$/product.py" />
         <option value="$PROJECT_DIR$/static/src/js/website_sale_ext.js" />
         <option value="$PROJECT_DIR$/models.py" />
-        <option value="$PROJECT_DIR$/views/viewmenu.xml" />
         <option value="$PROJECT_DIR$/security/ir.model.access.csv" />
         <option value="$PROJECT_DIR$/static/src/css/style.css" />
         <option value="$PROJECT_DIR$/views/templates.xml" />
         <option value="$PROJECT_DIR$/i18n/ru.po" />
         <option value="$PROJECT_DIR$/controllers.py" />
+        <option value="$PROJECT_DIR$/views/viewmenu.xml" />
+        <option value="$PROJECT_DIR$/views/sale_order.xml" />
         <option value="$PROJECT_DIR$/__openerp__.py" />
       </list>
     </option>
@@ -625,8 +655,6 @@
           <folding>
             <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -718,8 +746,6 @@
           <folding>
             <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -807,8 +833,6 @@
           <folding>
             <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -896,8 +920,6 @@
           <folding>
             <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
             <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
           </folding>
         </state>
@@ -970,14 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/sale_order.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.25">
-          <caret line="42" column="49" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/silkworm_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.75">
@@ -1040,36 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/viewmenu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042134833">
-          <caret line="500" column="85" selection-start-line="500" selection-start-column="85" selection-end-line="500" selection-end-column="85" />
-          <folding>
-            <element signature="n#record#0;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#3;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#4;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#7;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#8;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#18;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#19;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#20;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#21;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#22;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#23;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#24;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#25;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#26;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#27;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#28;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#30;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#31;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#record#32;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/src/js/website_sale_ext.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.039473683">
@@ -1105,36 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.125">
-          <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/i18n/ru.po">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="146" column="22" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/templates.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.980769">
-          <caret line="369" column="51" selection-start-line="369" selection-start-column="36" selection-end-line="369" selection-end-column="51" />
-          <folding>
-            <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#t#0;n#template#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-            <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.666667">
@@ -1149,6 +1103,72 @@
             <element signature="e#19641#22136#0" expanded="false" />
             <element signature="e#25424#29251#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/src/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.519231">
+          <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/viewmenu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="n#record#0;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#3;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#4;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#5;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#7;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#8;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#18;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#19;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#20;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#21;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#22;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#23;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#24;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#25;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#26;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#27;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#28;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#30;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#31;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#record#32;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i18n/ru.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44534412">
+          <caret line="146" column="22" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/templates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="489" column="128" selection-start-line="489" selection-start-column="118" selection-end-line="489" selection-end-column="128" />
+          <folding>
+            <element signature="n#div#14;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#t#0;n#template#1;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#t#0;n#template#2;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+            <element signature="n#template#6;n#data#0;n#openerp#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/sale_order.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.625">
+          <caret line="73" column="80" selection-start-line="73" selection-start-column="80" selection-end-line="73" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>

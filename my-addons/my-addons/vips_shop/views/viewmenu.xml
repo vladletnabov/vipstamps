@@ -2,6 +2,9 @@
 <openerp>
     <data>
 
+
+
+
         <!-- Станции метро-->
         <record model="ir.actions.act_window" id="metro_list_action">
             <field name="name">Станции метро</field>

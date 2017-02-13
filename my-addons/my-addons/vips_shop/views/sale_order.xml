@@ -56,5 +56,23 @@
             </field>
         </record>
 
+        <record id="sale.view_sales_order_filter" model="ir.ui.view">
+            <field name="arch" type="xml">
+                <search string="Search Sales Order">
+                    <filter string="Not public" domain="[('user_id','>',4)]" name="not_public_sale_orders_filter"/>
+               </search>
+            </field>
+        </record>
+
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="context">{
+                    'search_default_not_public_sale_orders_filter': 1
+                }
+            </field>
+        </record>
+        <record id="sale.action_quotations" model="ir.actions.act_window">
+            <field name="context">{'search_default_not_public_sale_orders_filter': 1}</field>
+        </record>
+
     </data>
 </openerp>
