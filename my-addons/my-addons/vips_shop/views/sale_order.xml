@@ -59,7 +59,7 @@
         <record id="sale.view_sales_order_filter" model="ir.ui.view">
             <field name="arch" type="xml">
                 <search string="Search Sales Order">
-                    <filter string="Not public" domain="[('user_id','>',4)]" name="not_public_sale_orders_filter"/>
+                    <filter string="Not public" domain="[('partner_id','>',4)]" name="not_public_sale_orders_filter"/>
                </search>
             </field>
         </record>
